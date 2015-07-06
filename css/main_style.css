@@ -1,0 +1,72 @@
+body {
+    background-color: #FFFFFD;
+}
+     
+body header a {
+    font-family: 'Roboto Slab', serif;
+}
+           
+html, body {
+    margin:0; 
+    padding: 0;
+}
+
+h1   {
+    color:blue
+}
+            
+#create_account {
+    float: right;
+    margin-right: 3%;
+    background-color: black;
+    margin-bottom: 1%;
+}
+
+#create_account a {
+    color: blue;
+}
+
+#logout {
+    float:right;
+    margin-right: 3%;
+}
+           
+header {
+    background-color: black;
+    width: 100%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.80;
+    float:right;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 1%;
+}
+
+.centered {
+    padding-top:7%;
+    float: none;
+    margin: 0 auto;
+}
+
+table tr th{
+    width:25%;
+}
+
+table tr {
+    background-color:#FFFEFD;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+table tr:first-child {
+    background-color:#f9f9f9;
+}
+
+@media screen and (max-width: 635px) {
+    .fix {
+        margin-top: 3%;   
+    }
+}
+  
