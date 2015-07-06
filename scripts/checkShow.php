@@ -154,6 +154,7 @@ if(isShowInShowTable($conn, $show_name)){
         echo 'alert("Unforunately that show is not available to track.")';
         echo '</script>';
     }else{
+        var_dump($search_shows);
         echo json_encode($search_shows);
     }
 }
