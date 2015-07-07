@@ -12,42 +12,28 @@ function displayContent(){
        // if(related_shows != NULL || related_shows != []){
             //We need to call an additional php file
             //autocomplete the thing then get the result
-            var test = [["Buffy the Vampire Slayer","2930"],["Buffy the Vampire Slayer - Season Eight: Motion comics","31192"],["Buffy the Animated Series","2931"]];
-            var new_test = [];
-            for(var x = 0; x < test.length; x+=1){
-                new_test.push({"label":test[x][0], "idx":test[x][1]});
+
+
+            var related_show = checkShows(show_title);
+
+            var related_shows = [];
+            for(var x = 0; x < related_show.length; x+=1){
+                related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
             }
 
-            alert(new_test);
-
             $("#urlText").autocomplete({
-                source: new_test,
+                source: related_shows,
                 select: function(e, ui) {
                     var show_name = ui.item.idx;
-                    //Call the other PHP file using AJAX!
                     alert(show_name);
+                    //Call the other php file using AJAX!
+
+
                 }
             });
             $("#urlText").autocomplete("search");
 
         //}
-}
-
-function checkShows(n){
-    var related_shows = [];
-    $.ajax({
-        type: 'GET',
-        url: '/scripts/checkShow.php',
-        async: false,
-        data: { show_name: n },
-        dataType: 'json',
-        success: function(data){
-            related_shows = data;
-            //$('#tvResults').append('<tr><td>' + "hello1" + '</td><td>' + "hello2" + '</td><td>' + "hello3" + '</td></tr>');
-            alert(data);
-        }
-    });
-    return related_shows;
 }
 
 /**
@@ -85,12 +71,6 @@ function autoFillShows(show){
  * @return None
  */
 
-$(document).ready(function() {
-    $("#submitURL").click(function(){
-
-    });
-});
-
 function checkShows(n){
     var related_shows = [];
     $.ajax({
@@ -101,7 +81,6 @@ function checkShows(n){
         dataType: 'json',
         success: function(data){
             related_shows = data;
-            //$('#tvResults').append('<tr><td>' + "hello1" + '</td><td>' + "hello2" + '</td><td>' + "hello3" + '</td></tr>');
         }
     });
     return related_shows;

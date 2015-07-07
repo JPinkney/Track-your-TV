@@ -37,7 +37,7 @@ function getDataFromTVRage($show_name){
     $shows = array();
     if($show_array != NULL){
         for($x = 0; $x < count($show_array['show']); $x++){
-            print_r($show_array['show'][$x]['name']);
+            //print_r($show_array['show'][$x]['name']);
             array_push($shows, array($show_array['show'][$x]['name'], $show_array['show'][$x]['showid'])); //JUST GET THE SHOW ID FROM HERE WITH THE NAME
         }
     }else{
@@ -47,7 +47,7 @@ function getDataFromTVRage($show_name){
         echo '</script>';
         $shows = NULL;
     }
-    return json_encode($shows);
+    echo json_encode($shows);
 }
 
 
@@ -130,9 +130,9 @@ function addShowToDB($conn, $showID){
 
 
 //TEST
-echo "<pre>";
-    print_r(getDataFromTVRage("Buffy"));
-echo "</pre>";
+//echo "<pre>";
+    getDataFromTVRage("Buffy");
+//echo "</pre>";
 
 /**
  *
