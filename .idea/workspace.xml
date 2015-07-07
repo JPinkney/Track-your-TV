@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="checkShow.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checkShow.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08261803" vertical-offset="823" max-vertical-offset="2640">
-              <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+            <state vertical-scroll-proportion="-31.958334" vertical-offset="1708" max-vertical-offset="2640">
+              <caret line="165" column="40" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="40" />
               <folding>
                 <marker date="1436232884000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
                 <marker date="1436232884000" expanded="true" signature="460:479" placeholder="SELECT * FRO..users..." />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="displayContent.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="displayContent.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/displayContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1785">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29811716" vertical-offset="0" max-vertical-offset="1740">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/scripts/isShowinDB.php" />
         <option value="$PROJECT_DIR$/scripts/isDataInDB.php" />
         <option value="$PROJECT_DIR$/base-login.php" />
-        <option value="$PROJECT_DIR$/js/displayContent.js" />
         <option value="$PROJECT_DIR$/scripts/checkShow.php" />
+        <option value="$PROJECT_DIR$/js/displayContent.js" />
       </list>
     </option>
   </component>
@@ -458,14 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/displayContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1785">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="900">
@@ -488,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08261803" vertical-offset="823" max-vertical-offset="2640">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+        <state vertical-scroll-proportion="-31.958334" vertical-offset="1708" max-vertical-offset="2640">
+          <caret line="165" column="40" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="40" />
           <folding>
             <marker date="1436232884000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
             <marker date="1436232884000" expanded="true" signature="460:479" placeholder="SELECT * FRO..users..." />
@@ -501,6 +493,14 @@
             <marker date="1436232884000" expanded="true" signature="4050:4129" placeholder="INSERT INTO ..." />
             <marker date="1436232884000" expanded="true" signature="4319:4369" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/displayContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29811716" vertical-offset="0" max-vertical-offset="1740">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

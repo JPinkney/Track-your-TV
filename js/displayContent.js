@@ -3,18 +3,26 @@
  * @return None
  */
 function displayContent(){
-        //var show_title = $('#urlText').val();
+        var show_title = $('#urlText').val();
 
-        //var related_shows = checkShows(show_title);
+        var related_shows = checkShows(show_title);
 
         //if the show is not already in the database
-        //if(related_shows != NULL || related_shows != []){
+       // if(related_shows != NULL || related_shows != []){
             //We need to call an additional php file
             //autocomplete the thing then get the result
 
+            $("#urlText").autocomplete({
+                source: ['Hello1', 'Hello2'],
+                select: function(e, ui) {
+                    var show_name = ui.item.value;
+                    //Call the other PHP file using AJAX!
+                    
+                }
+            });
+            $("#urlText").autocomplete("search");
+
         //}
-
-
 }
 
 function checkShows(n){
@@ -70,18 +78,7 @@ function autoFillShows(show){
 
 $(document).ready(function() {
     $("#submitURL").click(function(){
-        $('#urlText').trigger('focus');
-        var availableTags = ["Hello","Hello Hello","Hello World","Hello World!!!","Hello Again!"];
-        $("#urlText").autocomplete({
-            source: availableTags,
-            minLength: 0,
-            select: function(e, ui) {
-                $show_name = ui.item.value;
-                //Call the other PHP file!
-                alert($show_name);
-            }
-        });
-        $("#urlText").autocomplete("search");
+
     });
 });
 
