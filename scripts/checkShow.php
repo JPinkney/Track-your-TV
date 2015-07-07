@@ -37,8 +37,8 @@ function getDataFromTVRage($show_name){
     $shows = array();
     if($show_array != NULL){
         for($x = 0; $x < count($show_array['show']); $x++){
-            //print_r($show_array['show'][$x]['name']);
-            array_push($shows, array($show_array['show'][$x]['name'], $show_array['show']['showid'])); //JUST GET THE SHOW ID FROM HERE WITH THE NAME
+            print_r($show_array['show'][$x]['name']);
+            array_push($shows, array($show_array['show'][$x]['name'], $show_array['show'][$x]['showid'])); //JUST GET THE SHOW ID FROM HERE WITH THE NAME
         }
     }else{
         //PRINT OUT ERROR THING TO SCREEN SAYING SHOW NOT FOUND
@@ -47,7 +47,7 @@ function getDataFromTVRage($show_name){
         echo '</script>';
         $shows = NULL;
     }
-    return $shows;
+    return json_encode($shows);
 }
 
 
@@ -130,9 +130,9 @@ function addShowToDB($conn, $showID){
 
 
 //TEST
-/*echo "<pre>";
-    showInUserDB($conn, "TESTES");
-echo "</pre>";*/
+echo "<pre>";
+    print_r(getDataFromTVRage("Buffy"));
+echo "</pre>";
 
 /**
  *
@@ -152,7 +152,7 @@ echo "</pre>";*/
  */
 
 
-$show_name = $_GET['show_name'];
+/*$show_name = $_GET['show_name'];
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
@@ -165,7 +165,7 @@ if(isShowInShowTable($conn, $show_name)){
         //var_dump($search_shows);
         echo json_encode($search_shows);
     }
-}
+}*/
 
 
 ?>

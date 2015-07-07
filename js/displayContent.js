@@ -5,20 +5,27 @@
 function displayContent(){
         var show_title = $('#urlText').val();
 
-        var related_shows = checkShows(show_title);
-        alert("here");
-        alert(related_shows);
+        //var related_shows = checkShows(show_title);
+        //alert("here");
+        //alert(related_shows);
         //if the show is not already in the database
        // if(related_shows != NULL || related_shows != []){
             //We need to call an additional php file
             //autocomplete the thing then get the result
+            var test = [["Buffy the Vampire Slayer","2930"],["Buffy the Vampire Slayer - Season Eight: Motion comics","31192"],["Buffy the Animated Series","2931"]];
+            var new_test = [];
+            for(var x = 0; x < test.length; x+=1){
+                new_test.push({"label":test[x][0], "idx":test[x][1]});
+            }
+
+            alert(new_test);
 
             $("#urlText").autocomplete({
-                source: ['Hello1', 'Hello2'],
+                source: new_test,
                 select: function(e, ui) {
-                    var show_name = ui.item.value;
+                    var show_name = ui.item.idx;
                     //Call the other PHP file using AJAX!
-
+                    alert(show_name);
                 }
             });
             $("#urlText").autocomplete("search");
