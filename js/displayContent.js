@@ -6,7 +6,8 @@ function displayContent(){
         var show_title = $('#urlText').val();
 
         var related_shows = checkShows(show_title);
-
+        alert("here");
+        alert(related_shows);
         //if the show is not already in the database
        // if(related_shows != NULL || related_shows != []){
             //We need to call an additional php file
@@ -17,7 +18,7 @@ function displayContent(){
                 select: function(e, ui) {
                     var show_name = ui.item.value;
                     //Call the other PHP file using AJAX!
-                    
+
                 }
             });
             $("#urlText").autocomplete("search");
@@ -36,6 +37,7 @@ function checkShows(n){
         success: function(data){
             related_shows = data;
             //$('#tvResults').append('<tr><td>' + "hello1" + '</td><td>' + "hello2" + '</td><td>' + "hello3" + '</td></tr>');
+            alert(data);
         }
     });
     return related_shows;
