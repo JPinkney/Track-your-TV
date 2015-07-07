@@ -57,8 +57,8 @@ function getDataFromTVRage($show_name){
  *
  */
 function addShowToUsersList($conn, $show_id, $show_name, $username){
-    $query = $conn->prepare("INSERT INTO user_shows (showID, show_name) VALUES (?, ?) WHERE username=?");
-    $query->execute(array($show_id, $show_name, $username));
+    $query = $conn->prepare("INSERT INTO user_shows (username, showID, show_name) VALUES (?, ?, ?)");
+    $query->execute(array($username, $show_id, $show_name));
 }
 
 function showInUserDB($conn, $show_name){
@@ -67,22 +67,30 @@ function showInUserDB($conn, $show_name){
     $query->execute(array($show_name));
     $results = $query->fetchAll();
 
+    //Regardless of whether or not show is in the users table you'll need to get the info
+    $query = $conn->prepare("SELECT showID, airDate, nextEpisode FROM shows WHERE show_name=?");
+    $query->execute(array($show_name));
+    $show_data = $query->fetchAll();
+
+    $showID = $show_data[0]['showID'];
+    $airDate = $show_data[0]['airDate'];
+    $nextEpisode = $show_data[0]['nextEpisode'];
+
     //If it isn't in the users table then get the info from the shows table then add it
     if($results == NULL){
         //add
-        $User = $_SESSION['username'];
-        $query = $conn->prepare("INSERT INTO user_shows (showID, show_name, username) SELECT showID, show_name, '$User'  FROM shows WHERE show_name=?");
-        $query->execute(array($show_name));
-        $results = $query->fetchAll();
-        print_r($results); //Output the results and stuff
+        $user = $_SESSION['username'];
+        $user = "Josh";
+        addShowToUsersList($conn, $showID, $show_name, $user);
     }else{
         echo '<script language="javascript">';
         echo 'alert("You are already tracking that show silly!")';
         echo '</script>';
     }
 
+    $results = array($show_name, $airDate, $nextEpisode);
     //ECHO OUT TO THE UI
-    echo json_encode("ECHO THE RESULTS AND STUFF HERE");
+    echo json_encode($results);
 }
 
 function addShowToDB($conn, $showID){
@@ -122,9 +130,9 @@ function addShowToDB($conn, $showID){
 
 
 //TEST
-//echo "<pre>";
-//    isShowInShowTable($conn, "Arrow");
-//echo "</pre>";
+echo "<pre>";
+    showInUserDB($conn, "TESTES");
+echo "</pre>";
 
 /**
  *
@@ -144,7 +152,7 @@ function addShowToDB($conn, $showID){
  */
 
 
-$show_name = $_GET['show_name'];
+/*$show_name = $_GET['show_name'];
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
@@ -154,10 +162,10 @@ if(isShowInShowTable($conn, $show_name)){
         echo 'alert("Unforunately that show is not available to track.")';
         echo '</script>';
     }else{
-        var_dump($search_shows);
+        //var_dump($search_shows);
         echo json_encode($search_shows);
     }
-}
+}*/
 
 
 ?>

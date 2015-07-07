@@ -3,16 +3,16 @@
  * @return None
  */
 function displayContent(){
-        var show_title = $('#urlText').val();
+        //var show_title = $('#urlText').val();
 
-        var related_shows = checkShows(show_title);
+        //var related_shows = checkShows(show_title);
 
         //if the show is not already in the database
-        if(related_shows != NULL || related_shows != []){
+        //if(related_shows != NULL || related_shows != []){
             //We need to call an additional php file
             //autocomplete the thing then get the result
 
-        }
+        //}
 
 
 }
@@ -67,17 +67,39 @@ function autoFillShows(show){
  * Adds the auto complete to the text section
  * @return None
  */
-$(function autoFilling(shows) {
-    var availableTags = ["Hello","Hello Hello","Hello World","Hello World!!!","Hello Again!"];
-    $( "#urlText" ).autocomplete({
-      source: availableTags,
-      autoFocus: true,
-      select: function(e, ui) {
-        $show_name = ui.item.value;
-        //Call the other PHP file!
-      }
+
+$(document).ready(function() {
+    $("#submitURL").click(function(){
+        $('#urlText').trigger('focus');
+        var availableTags = ["Hello","Hello Hello","Hello World","Hello World!!!","Hello Again!"];
+        $("#urlText").autocomplete({
+            source: availableTags,
+            minLength: 0,
+            select: function(e, ui) {
+                $show_name = ui.item.value;
+                //Call the other PHP file!
+                alert($show_name);
+            }
+        });
+        $("#urlText").autocomplete("search");
     });
 });
+
+function checkShows(n){
+    var related_shows = [];
+    $.ajax({
+        type: 'GET',
+        url: '/scripts/checkShow.php',
+        async: false,
+        data: { show_name: n },
+        dataType: 'json',
+        success: function(data){
+            related_shows = data;
+            //$('#tvResults').append('<tr><td>' + "hello1" + '</td><td>' + "hello2" + '</td><td>' + "hello3" + '</td></tr>');
+        }
+    });
+    return related_shows;
+}
 
 
  /**
