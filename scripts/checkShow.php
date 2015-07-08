@@ -14,15 +14,6 @@ function isShowInShowTable($conn, $show_name){
     return $results;
 }
 
-//THIS IS A TEST FUNCTION AND NOT NEEDED
-//function selectUser($conn){
-//    $query = $conn->prepare("SELECT * FROM users");
-//    $query->execute();
-//    $results = $query->fetchAll();
-//    print_r($results[0]['username']);
-//}
-
-
 /*
  *
  * Returns a list of available shows from a TVRage search
@@ -93,45 +84,14 @@ function showInUserDB($conn, $show_name){
     echo json_encode($results);
 }
 
-function addShowToDB($conn, $showID){
-    //Add the show to the DB
 
-    //Add show to DB, ADD show to users list, display to userlist
-    $file = simplexml_load_file("http://services.tvrage.com/feeds/full_show_info.php?sid=".$showID);
-    $show_data = json_decode(json_encode($file), TRUE);
-    //SCRAPE WHATEVER INFO YOU NEED
-    $name = $show_data['name'];
-    $id = $show_data['showid'];
-    $stand_time = date("g:i a", strtotime($show_data['airtime']));
-    $airs = "airs ".$show_data['airday']."s at ".$stand_time." on ".$show_data['network'];
-    if($show_data['status'] === 'Ended' || $show_data['status'] === 'Canceled'){
-        $newest_episode = "This show has ended";
-    }else{
-        $last_season = end($show_data['Episodelist']['Season']);
-        $current_date = date("y-m-d");
-        $count = 0;
-        foreach($last_season as $episodes){
-            print_r($episodes);
-            if($episodes[$count]['airdate'] >= $current_date){
-                $newest_episode = $episodes[$count]['airdate'];
-                break;
-            }
-            $count+=1;
-        }
-    }
-
-    $query = $conn->prepare("INSERT INTO shows (showID, show_name, airDate, nextEpisode) VALUES (?, ?, ?, ?)");
-    $query->execute(array($id, $name, $airs, $newest_episode));
-
-    showInUserDB($conn, $name);
-
-    //echo json_encode(array($id, $name, $airs, $newest_episode));
-}
 
 
 //TEST
 //echo "<pre>";
-    getDataFromTVRage("Buffy");
+    $show = $_GET['show_name'];
+    getDataFromTVRage($show);
+    //echo json_encode("test");
 //echo "</pre>";
 
 /**
