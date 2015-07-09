@@ -5,27 +5,18 @@
 function displayContent(){
     var show_title = $('#urlText').val();
 
-    //var related_shows = checkShows(show_title);
-    //alert("here");
-    //alert(related_shows);
-    //if the show is not already in the database
-    // if(related_shows != NULL || related_shows != []){
-    //We need to call an additional php file
-    //autocomplete the thing then get the result
-
-
+    //checkShows returns an array that we transform into label: and idx: for autocomplete
     var related_show = checkShows(show_title);
-
     var related_shows = [];
     for(var x = 0; x < related_show.length; x+=1){
         related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
     }
 
+    //Autocomplete the main
     $("#urlText").autocomplete({
         source: related_shows,
         select: function(e, ui) {
             var show_id = ui.item.idx;
-            //alert(show_name);
             getShowInfo(show_id);
         }
     });

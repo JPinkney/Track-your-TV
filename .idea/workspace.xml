@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="checkShow.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="checkShow.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.375" vertical-offset="1104" max-vertical-offset="2040">
+            <state vertical-scroll-proportion="0.7852564" vertical-offset="0" max-vertical-offset="2040">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
               <folding>
                 <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
@@ -45,7 +45,7 @@
       <file leaf-file-name="getShowInfo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.125" vertical-offset="369" max-vertical-offset="1320">
+            <state vertical-scroll-proportion="-43.375" vertical-offset="99" max-vertical-offset="1320">
               <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding>
                 <element signature="e#6#92#0#PHP" expanded="true" />
@@ -57,27 +57,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getWhichTvShow.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/getWhichTvShow.php">
+      <file leaf-file-name="isUserInDB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/isUserInDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="465">
-              <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-              <folding>
-                <element signature="e#7#133#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="450">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="isDataInDB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
+      <file leaf-file-name="loadPreviousData.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/loadPreviousData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="900">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="360">
+              <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
               <folding>
-                <element signature="e#7#171#0#PHP" expanded="true" />
-                <marker date="1435716111000" expanded="true" signature="409:478" placeholder="SELECT show_..shows..." />
-                <marker date="1435716111000" expanded="true" signature="1056:1118" placeholder="INSERT INTO ..." />
+                <element signature="e#7#137#0#PHP" expanded="true" />
+                <marker date="1435633709000" expanded="true" signature="231:272" placeholder="SELECT * FRO..user_shows..." />
               </folding>
             </state>
           </provider>
@@ -96,21 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="displayContent.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="displayContent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/displayContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.234375" vertical-offset="0" max-vertical-offset="1755">
-              <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="2265">
-              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
+              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -379,28 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/getWhichTvShow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="465">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-          <folding>
-            <element signature="e#7#133#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="900">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#171#0#PHP" expanded="true" />
-            <marker date="1435716111000" expanded="true" signature="409:478" placeholder="SELECT show_..shows..." />
-            <marker date="1435716111000" expanded="true" signature="1056:1118" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/autofill.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="315">
@@ -428,38 +393,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/loadPreviousData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="360">
-          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="270">
           <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/isUserInDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="510">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/isShowInUsersTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="405">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -475,26 +412,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4695">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cronjob.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cronjob2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -523,56 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.375" vertical-offset="1104" max-vertical-offset="2040">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
-          <folding>
-            <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-            <marker date="1436321687000" expanded="true" signature="1477:1542" placeholder="INSERT INTO ..." />
-            <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
-            <marker date="1436321687000" expanded="true" signature="1731:1789" placeholder="SELECT showI..user_shows..." />
-            <marker date="1436321687000" expanded="true" signature="1988:2052" placeholder="SELECT showI..shows..." />
-            <marker date="1436321687000" expanded="true" signature="2851:2914" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="900">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#171#0#PHP" expanded="true" />
-            <marker date="1435716111000" expanded="true" signature="409:478" placeholder="SELECT show_..shows..." />
-            <marker date="1435716111000" expanded="true" signature="1056:1118" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/getWhichTvShow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="465">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-          <folding>
-            <element signature="e#7#133#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.125" vertical-offset="369" max-vertical-offset="1320">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="e#6#92#0#PHP" expanded="true" />
-            <marker date="1436408958000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
-            <marker date="1436408958000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
-            <marker date="1436408958000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/autofill.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390">
@@ -586,9 +460,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/displayContent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.234375" vertical-offset="0" max-vertical-offset="1755">
-          <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/loadPreviousData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="360">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding>
+            <element signature="e#7#137#0#PHP" expanded="true" />
+            <marker date="1435633709000" expanded="true" signature="231:272" placeholder="SELECT * FRO..user_shows..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/isUserInDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="450">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-43.375" vertical-offset="99" max-vertical-offset="1320">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+          <folding>
+            <element signature="e#6#92#0#PHP" expanded="true" />
+            <marker date="1436408958000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
+            <marker date="1436408958000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
+            <marker date="1436408958000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7852564" vertical-offset="0" max-vertical-offset="2040">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1436321687000" expanded="true" signature="1477:1542" placeholder="INSERT INTO ..." />
+            <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
+            <marker date="1436321687000" expanded="true" signature="1731:1789" placeholder="SELECT showI..user_shows..." />
+            <marker date="1436321687000" expanded="true" signature="1988:2052" placeholder="SELECT showI..shows..." />
+            <marker date="1436321687000" expanded="true" signature="2851:2914" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
