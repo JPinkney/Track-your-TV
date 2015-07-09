@@ -11,6 +11,11 @@ $query = $conn->prepare("SELECT show_name FROM shows");
 $query->execute();
 $results = $query->fetchAll();
 
-echo json_encode($results);
+$x  = array();
+foreach($results as $show){
+    array_push($x, $show['show_name']);
+}
+
+echo json_encode($x);
 
 ?>

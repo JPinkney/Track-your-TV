@@ -74,9 +74,8 @@ function addShowToDB($conn, $showID){
 
 }
 
-addShowToDB($conn, 2920);
-
-
+$id = $_GET['id'];
+addShowToDB($conn, $id);
 
 ?>
 

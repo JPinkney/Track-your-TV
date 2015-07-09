@@ -24,11 +24,9 @@ function displayContent(){
     $("#urlText").autocomplete({
         source: related_shows,
         select: function(e, ui) {
-            var show_name = ui.item.idx;
-            alert(show_name);
-            //Call the other php file using AJAX!
-
-
+            var show_id = ui.item.idx;
+            //alert(show_name);
+            getShowInfo(show_id);
         }
     });
     $("#urlText").autocomplete("search");
@@ -40,31 +38,7 @@ function displayContent(){
  * Gets all of the show names in the database for auto complete
  * @return {Array} String of show names
  */
-function autoFill(){
-    var autoFill = [];
-    $.ajax({
-        type: 'GET',
-        url: '/scripts/autofill.php',
-        dataType: 'json',
-        success:function(data){
-            autoFill = data;
-        }
-    });
-    return autoFill;
-}
 
-function autoFillShows(show){
-    var autoFill = [];
-    $.ajax({
-        type: 'GET',
-        url: '/scripts/getWhichTvShow.php?tvshow='.show,
-        dataType: 'json',
-        success:function(data){
-            autoFill = data;
-        }
-    });
-    return autoFill;
-}
 
 /**
  * Adds the auto complete to the text section
@@ -87,20 +61,23 @@ function checkShows(n){
 }
 
 function getShowInfo(n){
-    var related_shows = [];
     $.ajax({
         type: 'GET',
-        url: '/scripts/checkShow.php',
-        async: false,
-        data: { show_name: n },
+        url: '/scripts/getShowInfo.php',
+        data: { id: n },
         dataType: 'json',
         success: function(data){
-            related_shows = data;
+            $('#tvResults').append('<tr><td>' + data[0] + '</td><td>' + data[1] + '</td><td>' + data[2] + '</td></tr>');
         }
     });
-    return related_shows;
 }
 
+$(function autoFilling() {
+    $( "#urlText" ).autocomplete({
+        source: "/scripts/autofill.php",
+        autoFocus: true
+    });
+});
 
 /**
  * Checks the document for an enter click
@@ -111,3 +88,24 @@ $(document).keypress(function(event){
         $('#submitURL').click();
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

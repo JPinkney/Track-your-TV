@@ -28,12 +28,11 @@
       <file leaf-file-name="checkShow.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0" vertical-offset="615" max-vertical-offset="2040">
+            <state vertical-scroll-proportion="15.375" vertical-offset="1104" max-vertical-offset="2040">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
               <folding>
                 <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
                 <marker date="1436321687000" expanded="true" signature="1477:1542" placeholder="INSERT INTO ..." />
-                <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
                 <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
                 <marker date="1436321687000" expanded="true" signature="1731:1789" placeholder="SELECT showI..user_shows..." />
                 <marker date="1436321687000" expanded="true" signature="1988:2052" placeholder="SELECT showI..shows..." />
@@ -43,16 +42,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getShowInfo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getShowInfo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9161932" vertical-offset="0" max-vertical-offset="1335">
-              <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+            <state vertical-scroll-proportion="-32.125" vertical-offset="369" max-vertical-offset="1320">
+              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding>
                 <element signature="e#6#92#0#PHP" expanded="true" />
-                <marker date="1436325641000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
-                <marker date="1436325641000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
-                <marker date="1436325641000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
+                <marker date="1436408958000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
+                <marker date="1436408958000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
+                <marker date="1436408958000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -73,10 +72,12 @@
       <file leaf-file-name="isDataInDB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.875" vertical-offset="120" max-vertical-offset="900">
+            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="900">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#7#171#0#PHP" expanded="true" />
+                <marker date="1435716111000" expanded="true" signature="409:478" placeholder="SELECT show_..shows..." />
+                <marker date="1435716111000" expanded="true" signature="1056:1118" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -85,20 +86,21 @@
       <file leaf-file-name="autofill.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/autofill.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="315">
-              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+            <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding>
-                <marker date="1435547655000" expanded="true" signature="145:172" placeholder="SELECT show_..shows..." />
+                <element signature="e#7#88#0#PHP" expanded="true" />
+                <marker date="1436412520000" expanded="true" signature="145:172" placeholder="SELECT show_..shows..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="displayContent.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="displayContent.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/displayContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="1770">
-              <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+            <state vertical-scroll-proportion="1.234375" vertical-offset="0" max-vertical-offset="1755">
+              <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -107,7 +109,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.833333" vertical-offset="373" max-vertical-offset="2265">
+            <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="2265">
               <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
               <folding />
             </state>
@@ -115,9 +117,6 @@
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -128,7 +127,6 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/scripts/addUserToTable.php" />
         <option value="$PROJECT_DIR$/scripts/logout.php" />
-        <option value="$PROJECT_DIR$/scripts/autofill.php" />
         <option value="$PROJECT_DIR$/scripts/test.php" />
         <option value="$PROJECT_DIR$/scripts/getDataFromDB.php" />
         <option value="$PROJECT_DIR$/scripts/getWhichTvShow.php" />
@@ -139,9 +137,10 @@
         <option value="$PROJECT_DIR$/scripts/isShowinDB.php" />
         <option value="$PROJECT_DIR$/scripts/isDataInDB.php" />
         <option value="$PROJECT_DIR$/base-login.php" />
-        <option value="$PROJECT_DIR$/js/displayContent.js" />
         <option value="$PROJECT_DIR$/scripts/checkShow.php" />
         <option value="$PROJECT_DIR$/scripts/getShowInfo.php" />
+        <option value="$PROJECT_DIR$/scripts/autofill.php" />
+        <option value="$PROJECT_DIR$/js/displayContent.js" />
       </list>
     </option>
   </component>
@@ -150,10 +149,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1918" />
+    <option name="x" value="1918" />
     <option name="y" value="23" />
-    <option name="width" value="1503" />
-    <option name="height" value="825" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -255,10 +254,16 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -274,30 +279,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1918" y="23" width="1503" height="825" extended-state="6" />
+    <frame x="1918" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21689953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14427084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -317,9 +322,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1703125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -346,15 +351,87 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="2040">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1436321687000" expanded="true" signature="1477:1542" placeholder="INSERT INTO ..." />
+            <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
+            <marker date="1436321687000" expanded="true" signature="1731:1789" placeholder="SELECT showI..user_shows..." />
+            <marker date="1436321687000" expanded="true" signature="1988:2052" placeholder="SELECT showI..shows..." />
+            <marker date="1436321687000" expanded="true" signature="2851:2914" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#92#0#PHP" expanded="true" />
+            <marker date="1436408958000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
+            <marker date="1436408958000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
+            <marker date="1436408958000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/getWhichTvShow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="465">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+          <folding>
+            <element signature="e#7#133#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="900">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#171#0#PHP" expanded="true" />
+            <marker date="1435716111000" expanded="true" signature="409:478" placeholder="SELECT show_..shows..." />
+            <marker date="1435716111000" expanded="true" signature="1056:1118" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/autofill.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="315">
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+          <folding>
+            <element signature="e#7#88#0#PHP" expanded="true" />
+            <marker date="1436412520000" expanded="true" signature="145:172" placeholder="SELECT show_..shows..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/displayContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="1770">
+          <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="2265">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/loadPreviousData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="360">
           <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-          <folding>
-            <element signature="e#7#137#0#PHP" expanded="true" />
-            <marker date="1435633709000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_shows..." />
-            <marker date="1435633709000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_shows..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -362,7 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="270">
           <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -370,7 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
           <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -378,9 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="510">
           <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="25" selection-end-column="21" />
-          <folding>
-            <element signature="e#7#188#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -388,13 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="405">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#6#121#0#PHP" expanded="true" />
-            <marker date="1435634510000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_shows..." />
-            <marker date="1435634510000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_shows..." />
-            <marker date="1435634510000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_shows..." />
-            <marker date="1435634510000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -402,10 +467,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2190">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="SELECT passw.._accounts WHERE..." />
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="SELECT usern.._accounts WHERE..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -413,7 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4695">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -421,7 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -429,10 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="SELECT show_..shows..." />
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="UPDATE shows..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -440,10 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="SELECT show_..shows..." />
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="UPDATE shows..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -451,10 +503,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2430">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="SELECT usern.._accounts WHERE..." />
-            <marker date="1432498576000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -468,37 +517,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.833333" vertical-offset="373" max-vertical-offset="2265">
+        <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="2265">
           <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/autofill.php">
+    <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="315">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+        <state vertical-scroll-proportion="15.375" vertical-offset="1104" max-vertical-offset="2040">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
           <folding>
-            <marker date="1435547655000" expanded="true" signature="145:172" placeholder="SELECT show_..shows..." />
+            <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1436321687000" expanded="true" signature="1477:1542" placeholder="INSERT INTO ..." />
+            <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
+            <marker date="1436321687000" expanded="true" signature="1731:1789" placeholder="SELECT showI..user_shows..." />
+            <marker date="1436321687000" expanded="true" signature="1988:2052" placeholder="SELECT showI..shows..." />
+            <marker date="1436321687000" expanded="true" signature="2851:2914" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/isDataInDB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875" vertical-offset="120" max-vertical-offset="900">
+        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="900">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#7#171#0#PHP" expanded="true" />
+            <marker date="1435716111000" expanded="true" signature="409:478" placeholder="SELECT show_..shows..." />
+            <marker date="1435716111000" expanded="true" signature="1056:1118" placeholder="INSERT INTO ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/displayContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="1770">
-          <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -512,32 +560,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
+    <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="615" max-vertical-offset="2040">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+        <state vertical-scroll-proportion="-32.125" vertical-offset="369" max-vertical-offset="1320">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding>
-            <marker date="1436321687000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-            <marker date="1436321687000" expanded="true" signature="1477:1542" placeholder="INSERT INTO ..." />
-            <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
-            <marker date="1436321687000" expanded="true" signature="1477:1546" placeholder="INSERT INTO ..." />
-            <marker date="1436321687000" expanded="true" signature="1731:1789" placeholder="SELECT showI..user_shows..." />
-            <marker date="1436321687000" expanded="true" signature="1988:2052" placeholder="SELECT showI..shows..." />
-            <marker date="1436321687000" expanded="true" signature="2851:2914" placeholder="..." />
+            <element signature="e#6#92#0#PHP" expanded="true" />
+            <marker date="1436408958000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
+            <marker date="1436408958000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
+            <marker date="1436408958000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
+    <entry file="file://$PROJECT_DIR$/scripts/autofill.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9161932" vertical-offset="0" max-vertical-offset="1335">
-          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding>
-            <element signature="e#6#92#0#PHP" expanded="true" />
-            <marker date="1436325641000" expanded="true" signature="274:332" placeholder="SELECT showI..user_shows..." />
-            <marker date="1436325641000" expanded="true" signature="1042:1111" placeholder="INSERT INTO ..." />
-            <marker date="1436325641000" expanded="true" signature="2401:2480" placeholder="INSERT INTO ..." />
+            <element signature="e#7#88#0#PHP" expanded="true" />
+            <marker date="1436412520000" expanded="true" signature="145:172" placeholder="SELECT show_..shows..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/displayContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.234375" vertical-offset="0" max-vertical-offset="1755">
+          <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
