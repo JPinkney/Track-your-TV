@@ -7,11 +7,12 @@ Current features
 - Mobile optimizating 
 - Website scraping
 - Currently has name scraping, next episode air date, and when/where the show airs
-- Just added the mailing system
-- Protection against MySQL injections i.e. prepared statements and hashing
+- User security
 
 Features waiting to be added
-- Creating a better UI/UX and mobile optimization
+- Creating a better UI/UX and even better mobile optimization!
+- Mailing system
+- Text messaging system
 
 Languages Used:
   - Front End:

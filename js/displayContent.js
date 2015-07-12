@@ -6,7 +6,9 @@ function displayContent(){
     var show_title = $('#urlText').val();
 
     //checkShows returns an array that we transform into label: and idx: for autocomplete
+
     var related_show = checkShows(show_title);
+
     var related_shows = [];
     for(var x = 0; x < related_show.length; x+=1){
         related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
@@ -26,16 +28,9 @@ function displayContent(){
 }
 
 /**
- * Gets all of the show names in the database for auto complete
- * @return {Array} String of show names
- */
-
-
-/**
  * Adds the auto complete to the text section
  * @return None
  */
-
 function checkShows(n){
     var related_shows = [];
     $.ajax({
@@ -51,6 +46,10 @@ function checkShows(n){
     return related_shows;
 }
 
+/**
+ * Appends data to the table after getting the info from TVRage
+ * @return None
+ */
 function getShowInfo(n){
     $.ajax({
         type: 'GET',
@@ -63,6 +62,10 @@ function getShowInfo(n){
     });
 }
 
+/**
+ * Sets the autofill of text
+ * @return None
+ */
 $(function autoFilling() {
     $( "#urlText" ).autocomplete({
         source: "/scripts/autofill.php",

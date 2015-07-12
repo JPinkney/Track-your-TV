@@ -84,9 +84,6 @@ function showInUserDB($conn, $show_name){
     echo json_encode($results);
 }
 
-
-
-
 //TEST
 //echo "<pre>";
     $show = $_GET['show_name'];
