@@ -1,5 +1,5 @@
-<?php 
-include "base-login.php"; 
+<?php
+include "base-login.php";
 require "password.php";
 ?>
 
@@ -24,9 +24,10 @@ require "password.php";
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <?php
+//If the user is not logged in then they can't log in
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
-             header("Location:/index.php");
+    header('Location: http://example.com/Account/index.php');
 }
 elseif(!empty($_POST['username']) && !empty($_POST['password']))
 {
@@ -37,20 +38,21 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
     $query->execute(array($username));
     $results = $query->fetchAll();
 
-    if(password_verify($password, $results['password'])){
-        $_SESSION['Username'] = $user;
+    if(password_verify($password, $results[0]['password'])){
+        $_SESSION['Username'] = $username;
         $_SESSION['LoggedIn'] = 1;
 
-        header("Location:/index.php");
+        header('Location: http://example.com/Account/index.php');
+        die();
     }else{
         echo "<h6>Your username and password do not match.</h6>";
     }
-    
+
 }
 else
 {
     ?>
-     
+
    <div class="container">
     <div class="row">
         <div class="col-md-4 centered">
@@ -91,7 +93,7 @@ else
             </div>
         </div>
     </div>
-     
+
    <?php
 }
 ?>
