@@ -27,10 +27,12 @@ require "password.php";
 //If the user is not logged in then they can't log in
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
-    header('Location: http://example.com/Account/index.php');
+    header('Location: index.php');
 }
 elseif(!empty($_POST['username']) && !empty($_POST['password']))
 {
+    header('Location: index.php');
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -42,7 +44,7 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
         $_SESSION['Username'] = $username;
         $_SESSION['LoggedIn'] = 1;
 
-        header('Location: http://example.com/Account/index.php');
+        header('Location: index.php');
         die();
     }else{
         echo "<h6>Your username and password do not match.</h6>";

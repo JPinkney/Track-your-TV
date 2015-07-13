@@ -1,3 +1,3 @@
 <?php
-header("Location: http://www.hibbard.eu");
+header("Location: index.php");
 ?>
