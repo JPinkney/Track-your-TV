@@ -1,8 +1,3 @@
-<?php 
-include "base-login.php"; 
-require "password.php";
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +27,7 @@ require "password.php";
 
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" action="" method="post" id="main-form" name="main-form">
+                    <form class="form-horizontal" role="form" action="/scripts/accountValidation.php" method="post" id="main-form" name="main-form">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Username</label>
                             <div class="col-sm-9">
@@ -63,33 +58,16 @@ require "password.php";
                                <input type="text" class="form-control" required="" placeholder="Confirm your Email" name="email-confirm">
                             </div>
                         </div>
+                        <div class="col-md-offset-3 col-md-3">
+                            <button type="submit" id="submit-button" name="submit-button" class="btn btn-success btn-sm">Create account</button>
+                        </div>
                     </form>
-                    <div class="col-md-offset-3 col-md-3">
-                        <button type="submit" id="submit-button" name="submit-button" class="btn btn-success btn-sm">Create account</button>
-                    </div>
+
 
                 </div>
             </div>
         </div>
     </div>
-
-   <script type="text/javascript">
-       $("#submit-button").click(function(event){
-
-           event.preventDefault();
-
-           $.ajax({
-               type: 'POST',
-               url: '/scripts/validation.php',
-               data: $("#main-form").serialize(),
-               success: function(data){
-                   alert(data);
-               }
-           });
-
-       });
-
-   </script>
 
 
 </body>

@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joshpinkney
- * Date: 7/11/15
- * Time: 10:30 PM
- */
+ob_start();
 
 require "../base-login.php";
-
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -41,14 +35,12 @@ if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty
             $_SESSION['Email'] = $email;
             $_SESSION['LoggedIn'] = 1;
 
-            header("Location:/index.php");
+            header("Location: ../index.php");
         }else{
             echo "Sorry. The username you've chosen is already in use.";
         }
     }
-
-
-
 }
 
+ob_end_clean();
 ?>
