@@ -32,7 +32,6 @@ if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty
             $query->execute(array($username, $pass, $email));
 
             $_SESSION['Username'] = $username;
-            $_SESSION['Email'] = $email;
             $_SESSION['LoggedIn'] = 1;
 
             header("Location: ../index.php");

@@ -13,6 +13,9 @@ Features waiting to be added
 - Creating a better UI/UX and even better mobile optimization!
 - Mailing system
 - Text messaging system
+- Profile settings
+- Fast Web Scraping/Importing data to DB
+
 
 Languages Used:
   - Front End:
