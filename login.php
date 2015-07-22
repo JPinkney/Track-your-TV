@@ -9,6 +9,29 @@
         <!-- Login CSS -->
         <link href="css/login.css" type="text/css" rel="stylesheet">
 
+
+        <style type="text/css">
+            .vertical-alignment-helper {
+                display:table;
+                height: 100%;
+                width: 100%;
+                pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+            }
+            .vertical-align-center {
+                /* To center vertically */
+                display: table-cell;
+                vertical-align: middle;
+                pointer-events:none;
+            }
+            .modal-content {
+                /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+                width:inherit;
+                height:inherit;
+                /* To center horizontally */
+                margin: 0 auto;
+                pointer-events: all;
+            }
+        </style>
 </head>
 
 <body>
@@ -58,6 +81,40 @@
         </div>
     </div>
 </div>
+
+ <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+
+ <!-- Modal -->
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="vertical-alignment-helper">
+         <div class="modal-dialog vertical-align-center">
+             <div class="modal-content">
+                 <div class="panel-heading">
+                     <h3 class="panel-title">Sign In</h3>
+                 </div>
+                 <div class="panel-body">
+                     <form role="form">
+                         <fieldset>
+                             <div class="form-group">
+                                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+                             </div>
+                             <div class="form-group">
+                                 <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                             </div>
+                             <div class="checkbox">
+                                 <label>
+                                     <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                 </label>
+                             </div>
+                             <!-- Change this to a button or input when using this as a form -->
+                             <a href="javascript:;" class="btn btn-sm btn-success">Login</a>
+                         </fieldset>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
 
 
 

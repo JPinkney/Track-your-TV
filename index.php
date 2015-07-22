@@ -17,17 +17,61 @@
     <link href="css/main_style.css" type="text/css" rel="stylesheet">
     <!-- Javascript Table Content Loader -->
     <script src="js/displayContent.js"></script>
+    <style type="text/css">
+        .vertical-alignment-helper {
+            display:table;
+            height: 100%;
+            width: 100%;
+            pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+        }
+        .vertical-align-center {
+            /* To center vertically */
+            display: table-cell;
+            vertical-align: middle;
+            pointer-events:none;
+        }
+        .modal-content {
+            /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+            width:inherit;
+            height:inherit;
+            /* To center horizontally */
+            margin: 0 auto;
+            pointer-events: all;
+        }
+        .text-button button {
+            background:none!important;
+            border:none!important;
+            padding:0!important;
+            font: inherit!important;
+            /*border is optional*/
+            border-bottom:1px solid #444!important;
+            cursor: pointer!important;
+        }
+        .register-fix{
+            padding-left: 0px;
+            margin-bottom: 1em;
+        }
+        .center {
+            margin:0 auto!important;
+            text-align:center;
+        }
+    </style>
 </head>
 
-<body>    
+<body>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <!-- USER IS LOGGED IN -->
 <?php
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
     $User = $_SESSION['Username'];
-?>
-    
+    ?>
+
     <header>
         <div id="logout">
             <a href="/scripts/logout.php">Logout</a>
@@ -36,9 +80,9 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
             <a><strong>Welcome! </strong><?php echo $User; ?></a>
         </div>
     </header>
-      
+
     <div class = "main-table">
-        <div class = "container col-md-6 centered">   
+        <div class = "container col-md-6 centered">
             <div class = "input-group">
                 <div id="searchfield">
                     <input type= "text" id="urlText" name='urlText' class ="fix form-control biginput" placeholder= "Enter some text">
@@ -47,21 +91,21 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                 <button class = "btn btn-primary" id='submitURL' onclick="displayContent();" name='submitURL'>Search</button>
                 </span>
             </div>
-              </br>
-                <table id ='tvResults' class ="table table-bordered">
-                    <tr>
-                        <th>Tv Show</th>
-                        <th>Next Episode</th>
-                        <th>Air Date</th>
-                    </tr>
-                    <script type="text/javascript">
-                        addData();   
-                    </script>
-                </table>
+            </br>
+            <table id ='tvResults' class ="table table-bordered">
+                <tr>
+                    <th>Tv Show</th>
+                    <th>Next Episode</th>
+                    <th>Air Date</th>
+                </tr>
+                <script type="text/javascript">
+                    addData();
+                </script>
+            </table>
         </div>
     </div>
 
-     <?php
+<?php
 }
 else
 {
@@ -69,26 +113,133 @@ else
     <!-- USER IS NOT LOGGED IN -->
     <header>
         <div id="create_account">
-            <a href="login.php">Login/Create an Account</a>
+            <a data-toggle="modal" data-target="#myModal" style="cursor: pointer;">Login/Create an Account</a>
         </div>
     </header>
 
-   <div class = "main-table">
-            <div class = "container col-md-7 centered">   
-               <div class = "input-group fix">
-                    <input type= "text" id="urlText" name='urlText' class ="form-control" placeholder= "Type here to test it out">
+    <!-- Login -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Log In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form id="login-modal" method="POST" action="#">
+                                <fieldset>
+                                    <p id="error"></p>
+                                    <div class="form-group">
+                                        <input class="form-control" required="" placeholder="Username" name="username" id="username" type="username" autofocus="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" required="" placeholder="Password" name="password" id="password" type="password" value="">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        </label>
+                                    </div>
+                                    <div class="center">
+                                        <div class="col-sm-12 register-fix">
+                                            <a data-toggle="modal2" data-target="#myModal2" id="register-account" style="cursor:pointer;">Don't Have an account? Click here to register</a>
+                                        </div>
+                                        <!-- Change this to a button or input when using this as a form -->
+                                        <button id="login-button" name="login-button" class="btn btn-sm btn-success center">Login</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> <strong>Create an Account!</strong></div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" id="register-modal">
+                                <p id="register-error"></p>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Username</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" required="" placeholder="Username" class="form-control" name="username" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" class="form-control" required="" placeholder="Password" name="password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-3 control-label">Confirm your Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" class="form-control" required="" placeholder="Password" name="password-confirm">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required="" placeholder="Email" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-3 control-label">Confirm your email</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required="" placeholder="Confirm your Email" name="email-confirm">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-md-3">
+                                        <button type="button" id="back-button" name="back-button" class="btn btn-success btn-sm">I already have an account</button>
+                                    </div>
+                                    <div class="col-md-offset-3 col-md-3">
+                                        <button class="btn btn-sm btn-success center">Create account</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('#register-account').on('click', function () {
+            $('#myModal').modal('hide');
+            $('#myModal2').modal('show');
+        });
+        $('#back-button').on('click', function () {
+            $('#myModal2').modal('hide');
+            $('#myModal').modal('show');
+        });
+    </script>
+
+    <div class = "main-table">
+        <div class = "container col-md-7 centered">
+            <div class = "input-group fix">
+                <input type= "text" id="urlText" name='urlText' class ="form-control" placeholder= "Type here to test it out">
                     <span class = "input-group-btn">
                     <button class = "btn btn-primary" id='submitURL' onclick="displayContent();" name='submitURL'>Search</button>
                     </span>
-                </div>
-              </br>
+            </div>
+            </br>
             <table id ='tvResults' class ="table table-bordered">
                 <tr>
                     <th>Tv Show</th>
                     <th>Next Episode</th>
                     <th>Air Date</th>
                 </tr>
-                 <tr>
+                <tr>
                     <td>Game of Thrones</td>
                     <td>not currently airing</td>
                     <td>Airs Sundays at 9:00 PM on HBO</td>
@@ -135,9 +286,9 @@ else
                 </tr>
             </table>
         </div>
-</div>
-    
-   <?php
+    </div>
+
+<?php
 }
 ?>
 

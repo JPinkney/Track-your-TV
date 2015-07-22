@@ -1,5 +1,5 @@
 <?php
-ob_start();
+//ob_start();
 
 require "../base-login.php";
 
@@ -12,11 +12,11 @@ $email_confirm = $_POST['email-confirm'];
 if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty($email) && !empty($email_confirm)){
 
     if($password !== $password_confirm){
-        echo "Your passwords do not match";
+        echo json_encode("Your passwords do not match");
     }
 
     if($email !== $email_confirm){
-        echo "Your emails do not match";
+        echo json_encode("Your emails do not match");
     }
 
     if($password === $password_confirm & $email === $email_confirm){
@@ -34,12 +34,12 @@ if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty
             $_SESSION['Username'] = $username;
             $_SESSION['LoggedIn'] = 1;
 
-            header("Location: ../index.php");
+            echo json_encode(1);
         }else{
-            echo "Sorry. The username you've chosen is already in use.";
+            echo json_encode("Sorry. The username you've chosen is already in use.");
         }
     }
 }
 
-ob_end_clean();
+//ob_end_clean();
 ?>

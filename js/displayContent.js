@@ -27,6 +27,37 @@ function displayContent(){
     //}
 }
 
+$(function() {
+    // When the form is submitted
+    $("#login-modal").submit(function(event) {
+        event.preventDefault();
+
+        $.post("/scripts/loginVerification.php", $(this).serialize(), function(data){
+            if(data == true){
+                window.location.reload();
+            }else{
+                $('#error').text(data);
+                //$('#myModal').modal('hide');
+            }
+        });
+    });
+});
+
+$(function() {
+    // When the form is submitted
+    $("#register-modal").submit(function(event) {
+        event.preventDefault();
+
+        $.post("/scripts/accountValidation.php", $(this).serialize(), function(data){
+            if(data == true){
+                window.location.reload();
+            }else{
+                $('#register-error').text(data);
+            }
+        });
+    });
+});
+
 /**
  * Adds the auto complete to the text section
  * @return None
