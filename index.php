@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <!-- Importing Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
@@ -61,8 +61,9 @@
 <body>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <!-- USER IS LOGGED IN -->
@@ -99,7 +100,12 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                     <th>Air Date</th>
                 </tr>
                 <script type="text/javascript">
-                    addData();
+                    $.getJSON("/scripts/loadPreviousData.php", function(data){
+                        for (var i = 0; i < data.length; i++) {
+                            console.log(data[i]);
+                            $('#tvResults').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + data[i][2] + '</td></tr>');
+                        }
+                    });
                 </script>
             </table>
         </div>
@@ -163,7 +169,7 @@ else
             <div class="modal-dialog vertical-align-center">
                 <div class="modal-content">
                     <div class="panel panel-default">
-                        <div class="panel-heading"> <strong>Create an Account!</strong></div>
+                        <div class="panel-heading"><strong>Create an Account!</strong></div>
                         <div class="panel-body">
                             <form class="form-horizontal" id="register-modal">
                                 <p id="register-error"></p>

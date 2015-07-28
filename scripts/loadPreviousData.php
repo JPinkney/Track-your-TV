@@ -8,9 +8,9 @@
 
 require('../base-login.php');
 
-$username = $_SESSION['username'];
+$username = $_SESSION['Username'];
 
-$query = $conn->prepare("SELECT * FROM user_shows WHERE username=?");
+$query = $conn->prepare("SELECT A.show_name, A.nextEpisode, A.airDate FROM shows A, user_shows B WHERE A.showID=B.showID AND username=?");
 $query->execute(array($username));
 $result = $query->fetchAll();
 

@@ -2,32 +2,35 @@
  * Decides what to do after the user has clicked the button
  * @return None
  */
-function displayContent(){
-    var show_title = $('#urlText').val();
 
-    //checkShows returns an array that we transform into label: and idx: for autocomplete
-
-    var related_show = checkShows(show_title);
-
-    var related_shows = [];
-    for(var x = 0; x < related_show.length; x+=1){
-        related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
-    }
-
-    //Autocomplete the main
-    $("#urlText").autocomplete({
-        source: related_shows,
-        select: function(e, ui) {
-            var show_id = ui.item.idx;
-            getShowInfo(show_id);
-        }
-    });
-    $("#urlText").autocomplete("search");
-
-    //}
-}
 
 $(function() {
+
+    function displayContent(){
+        var show_title = $('#urlText').val();
+
+        //checkShows returns an array that we transform into label: and idx: for autocomplete
+
+        var related_show = checkShows(show_title);
+
+        var related_shows = [];
+        for(var x = 0; x < related_show.length; x+=1){
+            related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
+        }
+
+        //Autocomplete the main
+        $("#urlText").autocomplete({
+            source: related_shows,
+            select: function(e, ui) {
+                var show_id = ui.item.idx;
+                getShowInfo(show_id);
+            }
+        });
+        $("#urlText").autocomplete("search");
+
+        //}
+    }
+
     // When the form is submitted
     $("#login-modal").submit(function(event) {
         event.preventDefault();
@@ -41,9 +44,7 @@ $(function() {
             }
         });
     });
-});
 
-$(function() {
     // When the form is submitted
     $("#register-modal").submit(function(event) {
         event.preventDefault();
@@ -56,6 +57,14 @@ $(function() {
             }
         });
     });
+
+    function addData(){
+        $.get("/scripts/loadPreviousData", function(data){
+            //alert(data);
+            console.dir(data);
+            $('#tvResults').append('<tr><td>' + data[0] + '</td><td>' + data[1] + '</td><td>' + data[2] + '</td></tr>');
+        });
+    }
 });
 
 /**
