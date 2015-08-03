@@ -13,7 +13,7 @@ for($x = 0; $x < count($results); $x++){
     $to = $results[$x]['email'];
     $subject = "Your daily show reminder!";
     $txt = "Your show ".$results[$x]['show_name']." ".$results[$x]['airDate'];
-    $headers = "From: tracker@trackyourtv.com";
+    $headers = "From: TVTracker@trackyourtv.com";
 
     mail($to,$subject,$txt,$headers);
 }
