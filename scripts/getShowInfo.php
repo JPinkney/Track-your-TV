@@ -52,7 +52,7 @@ function addShowToDB($conn, $showID){
         $newest_episode = "This show has ended";
     }else{
         $last_season = end($show_data['Episodelist']['Season']);
-        $current_date = date("y-m-d");
+        $current_date = date("Y-m-d");
         $count = 0;
         foreach($last_season as $episodes){
             print_r($episodes);

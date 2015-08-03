@@ -100,12 +100,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                     <th>Air Date</th>
                 </tr>
                 <script type="text/javascript">
-                    $.getJSON("/scripts/loadPreviousData.php", function(data){
-                        for (var i = 0; i < data.length; i++) {
-                            console.log(data[i]);
-                            $('#tvResults').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + data[i][2] + '</td></tr>');
-                        }
-                    });
+                    loadPreviousData();
                 </script>
             </table>
         </div>

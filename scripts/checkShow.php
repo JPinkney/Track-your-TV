@@ -86,8 +86,8 @@ function showInUserDB($conn, $show_name){
 
 //TEST
 //echo "<pre>";
-    $show = $_GET['show_name'];
-    getDataFromTVRage($show);
+    //$show = $_GET['show_name'];
+    //getDataFromTVRage($show);
     //echo json_encode("test");
 //echo "</pre>";
 
@@ -109,7 +109,7 @@ function showInUserDB($conn, $show_name){
  */
 
 
-/*$show_name = $_GET['show_name'];
+$show_name = $_GET['show_name'];
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
@@ -122,7 +122,7 @@ if(isShowInShowTable($conn, $show_name)){
         //var_dump($search_shows);
         echo json_encode($search_shows);
     }
-}*/
+}
 
 
 ?>
