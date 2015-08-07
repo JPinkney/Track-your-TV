@@ -6,17 +6,22 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
     <!-- Importing Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <!-- Main Style Sheet -->
     <link href="css/main_style.css" type="text/css" rel="stylesheet">
     <!-- Javascript Table Content Loader -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="js/displayContent.js"></script>
+
     <style type="text/css">
         .vertical-alignment-helper {
             display:table;
@@ -60,12 +65,6 @@
 
 <body>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 <!-- USER IS LOGGED IN -->
 <?php
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
@@ -78,7 +77,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
             <a href="/scripts/logout.php">Logout</a>
         </div>
         <div id="create_account">
-            <a><strong>Welcome! </strong><?php echo $User; ?></a>
+            <a class="profile" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><strong>Welcome! </strong><?php echo $User; ?></a>
         </div>
     </header>
 
@@ -103,6 +102,68 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                     loadPreviousData();
                 </script>
             </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(".profile").on("click", function() {
+            $.ajax({
+                type: 'GET',
+                url: '/scripts/getCheckboxes.php',
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+                    if(data[0]['email_notifications'] === "1"){
+                        document.getElementById("email_notifications").checked = true;
+                    }
+                    if(data[0]['text_notifications'] === "1"){
+                        document.getElementById("text_notifications").checked = true;
+                    }
+                    document.getElementById('phone_number').value = data[0]['phone_number'];
+                }
+            });
+        });
+
+    </script>
+
+    <!-- Profile -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Log In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form id="profile-modal" method="POST" action="#">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" disabled="disabled" value=<?php echo $User; ?>>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="phone_number" placeholder="Phone Number" id="phone_number">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="emails" id="email_notifications" type="checkbox">Email Notifications
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="text-message" id="text_notifications" type="checkbox">Text Messages
+                                        </label>
+                                    </div>
+                                    <div class="center">
+                                        <!-- Change this to a button or input when using this as a form -->
+                                        <button id="login-button" name="login-button" class="btn btn-sm btn-success center">Login</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -292,6 +353,7 @@ else
 <?php
 }
 ?>
+
 
 </body>
 </html>

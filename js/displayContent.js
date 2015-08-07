@@ -5,7 +5,7 @@
 
 function displayContent(){
     var show_title = $('#urlText').val();
-
+    alert(show_title);
     //checkShows returns an array that we transform into label: and idx: for autocomplete
 
     var related_show = checkShows(show_title);
@@ -41,13 +41,13 @@ $(function() {
     // When the form is submitted
     $("#login-modal").submit(function(event) {
         event.preventDefault();
-
+        console.log($(this).serialize());
         $.post("/scripts/loginVerification.php", $(this).serialize(), function(data){
             if(data == true){
                 window.location.reload();
             }else{
                 $('#error').text(data);
-                //$('#myModal').modal('hide');
+                //
             }
         });
     });
@@ -62,6 +62,14 @@ $(function() {
             }else{
                 $('#register-error').text(data);
             }
+        });
+    });
+
+    $("#profile-modal").submit(function(event) {
+        event.preventDefault();
+        console.log($(this).serialize());
+        $.post("/scripts/updateProfile.php", $(this).serialize(), function(data){
+            $('#myModal').modal('hide');
         });
     });
 });
