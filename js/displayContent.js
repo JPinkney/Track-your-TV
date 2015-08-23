@@ -67,7 +67,6 @@ $(function() {
 
     $("#profile-modal").submit(function(event) {
         event.preventDefault();
-        console.log($(this).serialize());
         $.post("/scripts/updateProfile.php", $(this).serialize(), function(data){
             $('#myModal').modal('hide');
         });
@@ -98,13 +97,20 @@ function checkShows(n){
  * @return None
  */
 function getShowInfo(n){
+
     $.ajax({
         type: 'GET',
         url: '/scripts/getShowInfo.php',
         data: { id: n },
         dataType: 'json',
         success: function(data){
+            alert("getting the show");
+            alert(data);
             $('#tvResults').append('<tr><td>' + data[0] + '</td><td>' + data[1] + '</td><td>' + data[2] + '</td></tr>');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            alert(errorThrown);
         }
     });
 }

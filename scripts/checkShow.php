@@ -38,15 +38,9 @@ function getDataFromTVRage($show_name){
         echo '</script>';
         $shows = NULL;
     }
-    echo json_encode($shows);
+    return $shows;
 }
 
-
-/*
- *
- * Add a show to the users list
- *
- */
 function addShowToUsersList($conn, $show_id, $show_name, $username){
     $query = $conn->prepare("INSERT INTO user_shows (username, showID, show_name) VALUES (?, ?, ?)");
     $query->execute(array($username, $show_id, $show_name));
@@ -71,7 +65,7 @@ function showInUserDB($conn, $show_name){
     if($results == NULL){
         //add
         $user = $_SESSION['username'];
-        $user = "Josh";
+        //$user = "Josh";
         addShowToUsersList($conn, $showID, $show_name, $user);
     }else{
         echo '<script language="javascript">';
@@ -114,9 +108,10 @@ if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
     $search_shows = getDataFromTVRage($show_name);
+    //echo $search_shows;
     if($search_shows == NULL){
         echo '<script language="javascript">';
-        echo 'alert("Unforunately that show is not available to track.")';
+        echo 'alert("Unfortunately that show is not available to track.")';
         echo '</script>';
     }else{
         //var_dump($search_shows);

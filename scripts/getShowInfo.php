@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joshpinkney
- * Date: 7/7/15
- * Time: 10:13 PM
- */
 
 require "../base-login.php";
 
@@ -27,8 +21,7 @@ function showInUserDB($conn, $show_name, $showID, $airDate, $nextEpisode){
     }
 
     $results = array($show_name, $airDate, $nextEpisode);
-    //ECHO OUT TO THE UI
-    echo json_encode($results);
+    return $results;
 }
 
 function addShowToUsersList($conn, $show_id, $show_name, $username){
@@ -46,31 +39,53 @@ function addShowToDB($conn, $showID){
     //SCRAPE WHATEVER INFO YOU NEED
     $name = $show_data['name'];
     $id = $show_data['showid'];
+
     $stand_time = date("g:i a", strtotime($show_data['airtime']));
     $airs = "Airs ".$show_data['airday']." at ".$stand_time." on ".$show_data['network'];
+
     if($show_data['status'] === 'Ended' || $show_data['status'] === 'Canceled' || $show_data['status'] === "Canceled/Ended"){
         $newest_episode = "This show has ended";
     }else{
-        $last_season = end($show_data['Episodelist']['Season']);
-        $current_date = date("Y-m-d");
-        $count = 0;
-        foreach($last_season as $episodes){
-            print_r($episodes);
-            if($episodes[$count]['airdate'] >= $current_date){
-                $newest_episode = $episodes[$count]['airdate'];
-                break;
-            }
 
-            //FIX ME IF THE SHOW HAS ENDED AND STUFF
-            $count+=1;
+        //Go through episodelist then season then episode then date
+        $current_date = date("Y-m-d");
+        echo "<pre>";
+
+        //I.e. there is only 1 season
+        if($show_data['Episodelist']['Season'][0] == null) {
+            for($ep = 0; $ep < count($show_data['Episodelist']['Season']['episode']); $ep++){
+                if($show_data['Episodelist']['Season']['episode'][$ep]['airdate'] >= $current_date){
+                    $newest_episode = $show_data['Episodelist']['Season']['episode'][$ep]['airdate'];
+                    break;
+                }
+            }
+        }else {
+            for ($season = 0; $season < count($show_data['Episodelist']['Season']); $season++) {
+                if($show_data['Episodelist']['Season'][$season]['episode'][0] != null){
+                        for ($ep = 0; $ep < count($show_data['Episodelist']['Season'][$season]['episode']); $ep++) {
+                            if ($show_data['Episodelist']['Season'][$season]['episode'][$ep]['airdate'] >= $current_date) {
+                                $newest_episode = $show_data['Episodelist']['Season'][$season]['episode'][$ep]['airdate'];
+                                break;
+                            }
+                        }
+                    }else{
+                        //There is only one item in the xml
+                        if ($show_data['Episodelist']['Season'][$season]['episode']['airdate'] >= $current_date) {
+                            $newest_episode = $show_data['Episodelist']['Season'][$season]['episode']['airdate'];
+                            break;
+                        }
+                    }
+                }
         }
+        echo "</pre>";
+
     }
 
     $query = $conn->prepare("INSERT INTO shows (showID, show_name, airDate, nextEpisode) VALUES (?, ?, ?, ?)");
     $query->execute(array((int)$id, $name, $airs, $newest_episode));
 
-    showInUserDB($conn, $name, $id, $airs, $newest_episode);
-
+    $showInDB = showInUserDB($conn, $name, $id, $airs, $newest_episode);
+    echo json_encode($showInDB);
 
 }
 
