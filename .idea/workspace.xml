@@ -60,14 +60,14 @@
       <file leaf-file-name="checkShow.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80686694" vertical-offset="178" max-vertical-offset="1740">
-              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.80686694" vertical-offset="838" max-vertical-offset="1785">
+              <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
               <folding>
-                <marker date="1441761118000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-                <marker date="1441761118000" expanded="true" signature="1251:1320" placeholder="INSERT INTO ..." />
-                <marker date="1441761118000" expanded="true" signature="1541:1599" placeholder="SELECT showI..user_shows..." />
-                <marker date="1441761118000" expanded="true" signature="1541:1614" placeholder="SELECT showI..user_shows..." />
-                <marker date="1441761118000" expanded="true" signature="1820:1884" placeholder="SELECT showI..shows..." />
+                <marker date="1441916921000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+                <marker date="1441916921000" expanded="true" signature="456:525" placeholder="INSERT INTO ..." />
+                <marker date="1441916921000" expanded="true" signature="812:870" placeholder="SELECT showI..user_shows..." />
+                <marker date="1441916921000" expanded="true" signature="812:885" placeholder="SELECT showI..user_shows..." />
+                <marker date="1441916921000" expanded="true" signature="1091:1155" placeholder="SELECT showI..shows..." />
               </folding>
             </state>
           </provider>
@@ -76,13 +76,23 @@
       <file leaf-file-name="getShowInfo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1545">
+            <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1545">
               <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <marker date="1441744602000" expanded="true" signature="187:245" placeholder="SELECT showI..user_shows..." />
                 <marker date="1441744602000" expanded="true" signature="919:988" placeholder="INSERT INTO ..." />
                 <marker date="1441744602000" expanded="true" signature="3526:3605" placeholder="INSERT INTO ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="225">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +107,6 @@
         <option value="$PROJECT_DIR$/scripts/userindb.php" />
         <option value="$PROJECT_DIR$/scripts/addUserToTable.php" />
         <option value="$PROJECT_DIR$/scripts/logout.php" />
-        <option value="$PROJECT_DIR$/scripts/test.php" />
         <option value="$PROJECT_DIR$/scripts/getDataFromDB.php" />
         <option value="$PROJECT_DIR$/scripts/getWhichTvShow.php" />
         <option value="$PROJECT_DIR$/js/isShowInUsersTable.php" />
@@ -124,8 +133,9 @@
         <option value="$PROJECT_DIR$/scripts/getShowInfo.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/displayContent.js" />
-        <option value="$PROJECT_DIR$/scripts/checkShow.php" />
         <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/scripts/test.php" />
+        <option value="$PROJECT_DIR$/scripts/checkShow.php" />
       </list>
     </option>
   </component>
@@ -134,6 +144,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1923" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -229,6 +240,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Applications/MAMP/htdocs/trackyourtv/scripts/getShowInfo.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -280,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1053" extended-state="0" />
+    <frame x="1923" y="23" width="1920" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -289,7 +301,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -428,11 +440,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1995">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="28" />
           <folding>
-            <marker date="1441761118000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-            <marker date="1441761118000" expanded="true" signature="1251:1320" placeholder="INSERT INTO ..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1599" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1614" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1820:1884" placeholder="SELECT showI..shows..." />
+            <marker date="1441916921000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1441916921000" expanded="true" signature="456:525" placeholder="INSERT INTO ..." />
+            <marker date="1441916921000" expanded="true" signature="812:870" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="812:885" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="1091:1155" placeholder="SELECT showI..shows..." />
           </folding>
         </state>
       </provider>
@@ -505,11 +517,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1441761118000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-            <marker date="1441761118000" expanded="true" signature="1251:1320" placeholder="INSERT INTO ..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1599" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1614" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1820:1884" placeholder="SELECT showI..shows..." />
+            <marker date="1441916921000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1441916921000" expanded="true" signature="456:525" placeholder="INSERT INTO ..." />
+            <marker date="1441916921000" expanded="true" signature="812:870" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="812:885" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="1091:1155" placeholder="SELECT showI..shows..." />
           </folding>
         </state>
       </provider>
@@ -560,11 +572,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="2040">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
           <folding>
-            <marker date="1441761118000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-            <marker date="1441761118000" expanded="true" signature="1251:1320" placeholder="INSERT INTO ..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1599" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1614" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1820:1884" placeholder="SELECT showI..shows..." />
+            <marker date="1441916921000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1441916921000" expanded="true" signature="456:525" placeholder="INSERT INTO ..." />
+            <marker date="1441916921000" expanded="true" signature="812:870" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="812:885" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="1091:1155" placeholder="SELECT showI..shows..." />
           </folding>
         </state>
       </provider>
@@ -742,9 +754,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/getShowInfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1545">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1545">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <marker date="1441744602000" expanded="true" signature="187:245" placeholder="SELECT showI..user_shows..." />
@@ -756,14 +776,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/checkShow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80686694" vertical-offset="178" max-vertical-offset="1740">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.80686694" vertical-offset="838" max-vertical-offset="1785">
+          <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
           <folding>
-            <marker date="1441761118000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
-            <marker date="1441761118000" expanded="true" signature="1251:1320" placeholder="INSERT INTO ..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1599" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1541:1614" placeholder="SELECT showI..user_shows..." />
-            <marker date="1441761118000" expanded="true" signature="1820:1884" placeholder="SELECT showI..shows..." />
+            <marker date="1441916921000" expanded="true" signature="188:255" placeholder="SELECT show_..shows..." />
+            <marker date="1441916921000" expanded="true" signature="456:525" placeholder="INSERT INTO ..." />
+            <marker date="1441916921000" expanded="true" signature="812:870" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="812:885" placeholder="SELECT showI..user_shows..." />
+            <marker date="1441916921000" expanded="true" signature="1091:1155" placeholder="SELECT showI..shows..." />
           </folding>
         </state>
       </provider>

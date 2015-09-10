@@ -14,34 +14,16 @@ function isShowInShowTable($conn, $show_name){
     return $results;
 }
 
-/*
- *
- * Returns a list of available shows in array form (show name, show id) from a TVRage search
- *
- */
-function getDataFromTVRage($show_name){
-    //GET the results from TV Rage
-
-    //Add show to DB, ADD show to users list, display to userlist
-    $file = simplexml_load_file("http://services.tvrage.com/feeds/search.php?show=".$show_name);
-    $show_array = json_decode(json_encode($file), TRUE);
-    $shows = array();
-    if($show_array != NULL){
-        for($x = 0; $x < count($show_array['show']); $x++){
-            //print_r($show_array['show'][$x]['name']);
-            array_push($shows, array($show_array['show'][$x]['name'], $show_array['show'][$x]['showid'])); //JUST GET THE SHOW ID FROM HERE WITH THE NAME
-        }
-    }else{
-        $shows = NULL;
-    }
-    return $shows;
-}
-
 function addShowToUsersList($conn, $show_id, $show_name, $username){
     $query = $conn->prepare("INSERT INTO user_shows (username, showID, show_name) VALUES (?, ?, ?)");
     $query->execute(array($username, $show_id, $show_name));
 }
 
+/*
+ *
+ * Check to see if the show is in the users database
+ *
+ */
 function showInUserDB($conn, $show_name){
     //Check if the show is in the users table
     $user = $_SESSION['Username'];
@@ -74,6 +56,25 @@ function showInUserDB($conn, $show_name){
     echo json_encode($results);
 }
 
+/*
+ *
+ * Returns a list of available shows in array form (show name, show id) from a TVRage search
+ *
+ */
+function getDataFromTVMaze($show_name){
+    //GET the results from TV Rage
+
+    //$result = simplexml_load_string($result);
+    $url = "http://api.tvmaze.com/singlesearch/shows?q=".$show_name."&embed=episodes";
+    $json = file_get_contents($url);
+    $show_array = json_decode($json, TRUE);
+    echo "<pre>";
+        print_r($show_array);
+    echo "</pre>";
+
+    return array($show_array['name'], $show_array['id']);
+}
+
 /**
  *
  * Check if show is in db
@@ -92,18 +93,20 @@ function showInUserDB($conn, $show_name){
  */
 
 $show_name = $_GET['show_name'];
+//getDataFromTVMaze($show_name);
+
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
-    $search_shows = getDataFromTVRage($show_name);
-    //echo $search_shows;
-    if($search_shows == NULL){
+    $search_shows = getDataFromTVMaze($show_name);
+    echo empty($search_shows);
+    if(empty($search_shows)){
         echo '<script language="javascript">';
         echo 'alert("Unfortunately that show is not available to track.")';
         echo '</script>';
     }else{
-        //var_dump($search_shows);
-        echo json_encode($search_shows);
+        //add the show to the users db
+        //then display
     }
 }
 
