@@ -16,7 +16,7 @@ function isShowInShowTable($conn, $show_name){
 
 /*
  *
- * Returns a list of available shows from a TVRage search
+ * Returns a list of available shows in array form (show name, show id) from a TVRage search
  *
  */
 function getDataFromTVRage($show_name){
@@ -32,10 +32,6 @@ function getDataFromTVRage($show_name){
             array_push($shows, array($show_array['show'][$x]['name'], $show_array['show'][$x]['showid'])); //JUST GET THE SHOW ID FROM HERE WITH THE NAME
         }
     }else{
-        //PRINT OUT ERROR THING TO SCREEN SAYING SHOW NOT FOUND
-        echo '<script language="javascript">';
-        echo 'alert("You are already tracking that show silly!")';
-        echo '</script>';
         $shows = NULL;
     }
     return $shows;
@@ -48,8 +44,10 @@ function addShowToUsersList($conn, $show_id, $show_name, $username){
 
 function showInUserDB($conn, $show_name){
     //Check if the show is in the users table
-    $query = $conn->prepare("SELECT showID, show_name FROM user_shows WHERE show_name=?");
-    $query->execute(array($show_name));
+    $user = $_SESSION['Username'];
+
+    $query = $conn->prepare("SELECT showID, show_name FROM user_shows WHERE show_name=? AND username=?");
+    $query->execute(array($show_name, $user));
     $results = $query->fetchAll();
 
     //Regardless of whether or not show is in the users table you'll need to get the info
@@ -62,10 +60,8 @@ function showInUserDB($conn, $show_name){
     $nextEpisode = $show_data[0]['nextEpisode'];
 
     //If it isn't in the users table then get the info from the shows table then add it
-    if($results == NULL){
+    if(count($results) == 0){
         //add
-        $user = $_SESSION['username'];
-        //$user = "Josh";
         addShowToUsersList($conn, $showID, $show_name, $user);
     }else{
         echo '<script language="javascript">';
@@ -77,13 +73,6 @@ function showInUserDB($conn, $show_name){
     //ECHO OUT TO THE UI
     echo json_encode($results);
 }
-
-//TEST
-//echo "<pre>";
-    //$show = $_GET['show_name'];
-    //getDataFromTVRage($show);
-    //echo json_encode("test");
-//echo "</pre>";
 
 /**
  *
@@ -101,7 +90,6 @@ function showInUserDB($conn, $show_name){
  *            Display to users list
  *
  */
-
 
 $show_name = $_GET['show_name'];
 if(isShowInShowTable($conn, $show_name)){

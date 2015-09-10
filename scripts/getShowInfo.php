@@ -11,8 +11,8 @@ function showInUserDB($conn, $show_name, $showID, $airDate, $nextEpisode){
     //If it isn't in the users table then get the info from the shows table then add it
     if($results == NULL){
         //add
-        //$user = $_SESSION['username'];
-        $user = "Josh";
+        $user = $_SESSION['username'];
+        //$user = "Josh";
         addShowToUsersList($conn, $showID, $show_name, $user);
     }else{
         echo '<script language="javascript">';

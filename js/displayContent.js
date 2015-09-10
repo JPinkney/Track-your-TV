@@ -5,11 +5,11 @@
 
 function displayContent(){
     var show_title = $('#urlText').val();
-    alert(show_title);
+
     //checkShows returns an array that we transform into label: and idx: for autocomplete
 
     var related_show = checkShows(show_title);
-
+    console.dir(related_show);
     var related_shows = [];
     for(var x = 0; x < related_show.length; x+=1){
         related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
@@ -41,13 +41,11 @@ $(function() {
     // When the form is submitted
     $("#login-modal").submit(function(event) {
         event.preventDefault();
-        console.log($(this).serialize());
         $.post("/scripts/loginVerification.php", $(this).serialize(), function(data){
             if(data == true){
                 window.location.reload();
             }else{
                 $('#error').text(data);
-                //
             }
         });
     });

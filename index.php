@@ -198,11 +198,6 @@ else
                                     <div class="form-group">
                                         <input class="form-control" required="" placeholder="Password" name="password" id="password" type="password" value="">
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                        </label>
-                                    </div>
                                     <div class="center">
                                         <div class="col-sm-12 register-fix">
                                             <a data-toggle="modal2" data-target="#myModal2" id="register-account" style="cursor:pointer;">Don't Have an account? Click here to register</a>
