@@ -19,6 +19,11 @@ function addShowToUsersList($conn, $show_id, $show_name, $username){
     $query->execute(array($username, $show_id, $show_name));
 }
 
+function addShowToShowsList($conn, $id, $name, $airs, $newest_episode){
+    $query = $conn->prepare("INSERT INTO shows (showID, show_name, airDate, nextEpisode) VALUES (?, ?, ?, ?)");
+    $query->execute(array((int)$id, $name, $airs, $newest_episode));
+}
+
 /*
  *
  * Check to see if the show is in the users database
@@ -27,7 +32,6 @@ function addShowToUsersList($conn, $show_id, $show_name, $username){
 function showInUserDB($conn, $show_name){
     //Check if the show is in the users table
     $user = $_SESSION['Username'];
-
     $query = $conn->prepare("SELECT showID, show_name FROM user_shows WHERE show_name=? AND username=?");
     $query->execute(array($show_name, $user));
     $results = $query->fetchAll();
@@ -43,7 +47,6 @@ function showInUserDB($conn, $show_name){
 
     //If it isn't in the users table then get the info from the shows table then add it
     if(count($results) == 0){
-        //add
         addShowToUsersList($conn, $showID, $show_name, $user);
     }else{
         echo '<script language="javascript">';
@@ -56,24 +59,72 @@ function showInUserDB($conn, $show_name){
     echo json_encode($results);
 }
 
-/*
- *
- * Returns a list of available shows in array form (show name, show id) from a TVRage search
- *
- */
-function getDataFromTVMaze($show_name){
-    //GET the results from TV Rage
+class TVShow {
 
-    //$result = simplexml_load_string($result);
-    $url = "http://api.tvmaze.com/singlesearch/shows?q=".$show_name."&embed=episodes";
-    $json = file_get_contents($url);
-    $show_array = json_decode($json, TRUE);
-    echo "<pre>";
-        print_r($show_array);
-    echo "</pre>";
+    public $id;
+    public $url;
+    public $name;
+    public $type;
+    public $language;
+    public $genres;
+    public $status;
+    public $runtime;
+    public $premiered;
+    public $rating;
+    public $weight;
+    public $network_array;
+    public $network;
+    public $webChannel;
+    public $externalIDs;
+    public $images;
+    public $summary;
+    public $nextAirDate;
+    public $airTime;
+    public $airDay;
 
-    return array($show_array['name'], $show_array['id']);
-}
+    function __construct($show_name){
+
+        $url = "http://api.tvmaze.com/singlesearch/shows?q=".$show_name."&embed=episodes";
+        $json = file_get_contents($url);
+        $show_array = json_decode($json, TRUE);
+
+
+
+        $this->id = (int) $show_array['id'];
+        $this->url = $show_array['url'];
+        $this->name = $show_array['name'];
+        $this->type = $show_array['type'];
+        $this->language = $show_array['language'];
+        $this->genres = $show_array['genres'];
+        $this->status = $show_array['status'];
+        $this->runtime = $show_array['runtime'];
+        $this->premiered = $show_array['premiered'];
+        $this->rating = $show_array['rating'];
+        $this->weight = $show_array['weight'];
+        $this->network_array = $show_array['network'];
+        $this->network = $show_array['network']['name'];
+        $this->webChannel = $show_array['webChannel'];
+        $this->externalIDs = $show_array['externals'];
+        $this->images = $show_array['image'];
+        $this->summary = strip_tags($show_array['summary']);
+
+        $current_date = date("Y-m-d");
+        foreach($show_array['_embedded']['episodes'] as $episode){
+            if($episode['airdate'] >= $current_date){
+                $this->nextAirDate = $episode['airdate'];
+                $this->airTime = date("g:i A", $episode['airtime']);
+                $this->airDay =  date('l', strtotime($episode['airdate']));
+                break;
+            }
+        }
+
+    }
+
+    function isEmpty(){
+        return($this->id == null || $this->id == 0 && $this->url == null && $this->name == null);
+    }
+
+};
 
 /**
  *
@@ -98,15 +149,31 @@ $show_name = $_GET['show_name'];
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
-    $search_shows = getDataFromTVMaze($show_name);
-    echo empty($search_shows);
-    if(empty($search_shows)){
+
+    $search_show = new TVShow($show_name);
+
+    //We need to double check after the search if its in the table otherwise it could store duplicates if they spelled something wrong
+
+    if($search_show->isEmpty()){
         echo '<script language="javascript">';
         echo 'alert("Unfortunately that show is not available to track.")';
         echo '</script>';
     }else{
         //add the show to the users db
         //then display
+
+        $user = $_SESSION['Username'];
+
+        $show_id = $search_show->id;
+        $show_name = $search_show->name;
+        $show_airs = 'Airs '.$search_show->airDay."'s at ".$search_show->airTime.' on '.$search_show->network;
+        $show_newEpisode = $search_show->nextAirDate;
+
+
+        addShowToShowsList($conn, $show_id, $show_name, $show_airs, $show_newEpisode);
+        addShowToUsersList($conn, $show_id, $show_name, $user);
+
+        echo json_encode(array($show_id, $show_newEpisode, $show_airs));
     }
 }
 

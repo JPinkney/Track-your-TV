@@ -1,10 +1,13 @@
 <?php
 
-$url = "http://api.tvmaze.com/search/shows?q=suits&embed=episodes";
-$json = file_get_contents($url);
-$test = json_decode($json, TRUE);
+class Person {
+    public $name;
 
-echo "<pre>";
-    print_r($test);
-echo "</pre>";
+    function __construct( $name ) {
+        $this->name = $name;
+    }
+};
+
+$jack = new Person('Jack');
+echo $jack->name;
 ?>
