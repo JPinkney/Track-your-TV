@@ -74,7 +74,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 
     <header>
         <div id="logout">
-            <a href="/scripts/logout.php">Logout</a>
+            <a href="scripts/logout.php">Logout</a>
         </div>
         <div id="create_account">
             <a class="profile" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><strong>Welcome! </strong><?php echo $User; ?></a>
@@ -109,7 +109,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
         $(".profile").on("click", function() {
             $.ajax({
                 type: 'GET',
-                url: '/scripts/getCheckboxes.php',
+                url: 'scripts/getCheckboxes.php',
                 async: false,
                 dataType: 'json',
                 success: function (data) {
