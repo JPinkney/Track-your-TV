@@ -332,11 +332,6 @@ else
                     <td>Airs Thursdays at 8:00 PM on CBS</td>
                 </tr>
                 <tr>
-                    <td>Friends</td>
-                    <td>not currently airing</td>
-                    <td>Show ended</td>
-                </tr>
-                <tr>
                     <td>Breaking Bad</td>
                     <td>not currently airing</td>
                     <td>Show ended</td>
