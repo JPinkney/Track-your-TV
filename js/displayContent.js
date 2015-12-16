@@ -25,11 +25,10 @@ function displayContent(){
     });
     $("#urlText").autocomplete("search");
 
-    //}
 }
 
 function loadPreviousData(){
-    $.getJSON("/scripts/loadPreviousData.php", function(data){
+    $.getJSON("scripts/loadPreviousData.php", function(data){
         for (var i = 0; i < data.length; i++) {
             $('#tvResults').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + data[i][2] + '</td></tr>');
         }
@@ -41,7 +40,7 @@ $(function() {
     // When the form is submitted
     $("#login-modal").submit(function(event) {
         event.preventDefault();
-        $.post("/scripts/loginVerification.php", $(this).serialize(), function(data){
+        $.post("scripts/loginVerification.php", $(this).serialize(), function(data){
             if(data == true){
                 window.location.reload();
             }else{
@@ -54,7 +53,7 @@ $(function() {
     $("#register-modal").submit(function(event) {
         event.preventDefault();
 
-        $.post("/scripts/accountValidation.php", $(this).serialize(), function(data){
+        $.post("scripts/accountValidation.php", $(this).serialize(), function(data){
             if(data == true){
                 window.location.reload();
             }else{
@@ -65,7 +64,7 @@ $(function() {
 
     $("#profile-modal").submit(function(event) {
         event.preventDefault();
-        $.post("/scripts/updateProfile.php", $(this).serialize(), function(data){
+        $.post("scripts/updateProfile.php", $(this).serialize(), function(data){
             $('#myModal').modal('hide');
         });
     });
@@ -79,7 +78,7 @@ function checkShows(n){
     var related_shows = [];
     $.ajax({
         type: 'GET',
-        url: '/scripts/checkShow.php',
+        url: 'scripts/checkShow.php',
         async: false,
         data: { show_name: n },
         dataType: 'json',
@@ -98,7 +97,7 @@ function getShowInfo(n){
 
     $.ajax({
         type: 'GET',
-        url: '/scripts/getShowInfo.php',
+        url: 'scripts/getShowInfo.php',
         data: { id: n },
         dataType: 'json',
         success: function(data){
@@ -119,7 +118,7 @@ function getShowInfo(n){
  */
 $(function autoFilling() {
     $( "#urlText" ).autocomplete({
-        source: "/scripts/autofill.php",
+        source: "scripts/autofill.php",
         autoFocus: true
     });
 });
