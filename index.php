@@ -327,11 +327,6 @@ else
                     <td>Airs Mondays at 8:00 PM on FOX</td>
                 </tr>
                 <tr>
-                    <td>The Big Bang Theory</td>
-                    <td>Dec 11 2014</td>
-                    <td>Airs Thursdays at 8:00 PM on CBS</td>
-                </tr>
-                <tr>
                     <td>Breaking Bad</td>
                     <td>not currently airing</td>
                     <td>Show ended</td>
