@@ -14,7 +14,7 @@ namespace JPinkney\TVMaze;
  *
  * @package JPinkney\TVMaze
  */
-class TVShow extends TVProduction{
+class TVShow extends TVProduction {
 
 	/**
 	 * @var

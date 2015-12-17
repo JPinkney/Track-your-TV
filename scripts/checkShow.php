@@ -1,7 +1,7 @@
 <?php
 
 require "../base-login.php";
-require '../TVMazeIncludes.php';
+require "../TVMazeIncludes.php";
 
 /*
  *
@@ -85,8 +85,8 @@ if(isShowInShowTable($conn, $show_name)){
 
     $Client = new JPinkney\Client;
 
-    $search_show = $Client->TVMaze->singleSearch($show_name);
-
+    $search_show = $Client->TVMaze->singleSearch($show_name)[0];
+ 
     //We need to double check after the search if its in the table otherwise it could store duplicates if they spelled something wrong
     if($search_show === null || $search_show === ""){
         echo '<script language="javascript">';
@@ -102,7 +102,6 @@ if(isShowInShowTable($conn, $show_name)){
         $show_name = $search_show->name;
         $show_airs = 'Airs '.$search_show->airDay."'s at ".$search_show->airTime.' on '.$search_show->network;
         $show_newEpisode = $search_show->nextAirDate;
-
 
         addShowToShowsList($conn, $show_id, $show_name, $show_airs, $show_newEpisode);
         addShowToUsersList($conn, $show_id, $show_name, $user);
