@@ -9,22 +9,29 @@ function displayContent(){
     //checkShows returns an array that we transform into label: and idx: for autocomplete
 
     var related_show = checkShows(show_title);
-    console.dir(related_show);
-    var related_shows = [];
-    for(var x = 0; x < related_show.length; x+=1){
-        related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
+
+    if(related_show.length === 0){
+        alert("You are already tracking that show!");
+    }else if (related_show[0] === "") {
+        alert("Sorry, that show is not found");
     }
-
-    //Autocomplete the main
-    $("#urlText").autocomplete({
-        source: related_shows,
-        select: function(e, ui) {
-            var show_id = ui.item.idx;
-            getShowInfo(show_id);
+    else{
+        var related_shows = [];
+        for(var x = 0; x < related_show.length; x+=1){
+            related_shows.push({"label":related_show[x][0], "idx":related_show[x][1]});
         }
-    });
-    $("#urlText").autocomplete("search");
 
+        //Autocomplete the main
+        $("#urlText").autocomplete({
+            source: related_shows,
+            select: function(e, ui) {
+                var show_id = ui.item.idx;
+                getShowInfo(show_id);
+            }
+        });
+        $("#urlText").autocomplete("search");
+    }
+    
 }
 
 function loadPreviousData(){

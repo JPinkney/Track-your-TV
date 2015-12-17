@@ -81,12 +81,15 @@ $show_name = $_GET['show_name'];
 
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
+
+    echo json_encode(array());
+
 }else{
 
     $Client = new JPinkney\Client;
 
     $search_show = $Client->TVMaze->singleSearch($show_name)[0];
- 
+
     //We need to double check after the search if its in the table otherwise it could store duplicates if they spelled something wrong
     if($search_show === null || $search_show === ""){
         echo '<script language="javascript">';
@@ -98,13 +101,15 @@ if(isShowInShowTable($conn, $show_name)){
 
         $user = $_SESSION['Username'];
 
-        $show_id = $search_show->id;
-        $show_name = $search_show->name;
-        $show_airs = 'Airs '.$search_show->airDay."'s at ".$search_show->airTime.' on '.$search_show->network;
-        $show_newEpisode = $search_show->nextAirDate;
+        $show_id = ($search_show->id === null ? "" : $search_show->id);
+        $show_name = ($search_show->name ? "" : $search_show->name);
+        $show_newEpisode = ($search_show->nextEpisode === null ? "Unknown Next Air Date" : $search_show->nextEpisode);
+        $show_airs = ($search_show->airDay === null ? "Not Currently Airing" : 'Airs '.$search_show->airDay."'s at ".$search_show->airTime.' on '.$search_show->network);
 
-        addShowToShowsList($conn, $show_id, $show_name, $show_airs, $show_newEpisode);
-        addShowToUsersList($conn, $show_id, $show_name, $user);
+        if($show_id !== ""){
+            addShowToShowsList($conn, $show_id, $show_name, $show_airs, $show_newEpisode);
+            addShowToUsersList($conn, $show_id, $show_name, $user);
+        }       
 
         echo json_encode(array($show_id, $show_newEpisode, $show_airs));
     }
