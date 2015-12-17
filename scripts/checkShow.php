@@ -102,7 +102,6 @@ if(isShowInShowTable($conn, $show_name)){
         $user = $_SESSION['Username'];
 
         $show_id = ($search_show->id === null ? "" : $search_show->id);
-        $show_name = ($search_show->name ? "" : $search_show->name);
         $show_newEpisode = ($search_show->nextEpisode === null ? "Unknown Next Air Date" : $search_show->nextEpisode);
         $show_airs = ($search_show->airDay === null ? "Not Currently Airing" : 'Airs '.$search_show->airDay."'s at ".$search_show->airTime.' on '.$search_show->network);
 
@@ -111,7 +110,7 @@ if(isShowInShowTable($conn, $show_name)){
             addShowToUsersList($conn, $show_id, $show_name, $user);
         }       
 
-        echo json_encode(array($show_id, $show_newEpisode, $show_airs));
+        echo json_encode(array($show_name, $show_newEpisode, $show_airs));
     }
 }
 
