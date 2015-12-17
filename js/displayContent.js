@@ -9,7 +9,7 @@ function displayContent(){
 
     if(related_show.length === 0){
         alert("You are already tracking that show!");
-    }else if (related_show[0] === "") {
+    }else if (related_show[0] === "Not found") {
         alert("Sorry, that show is not found");
     }
     else{
