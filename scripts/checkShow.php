@@ -1,6 +1,7 @@
 <?php
 
 require "../base-login.php";
+require '../TVMazeIncludes.php';
 
 /*
  *
@@ -59,73 +60,6 @@ function showInUserDB($conn, $show_name){
     echo json_encode($results);
 }
 
-class TVShow {
-
-    public $id;
-    public $url;
-    public $name;
-    public $type;
-    public $language;
-    public $genres;
-    public $status;
-    public $runtime;
-    public $premiered;
-    public $rating;
-    public $weight;
-    public $network_array;
-    public $network;
-    public $webChannel;
-    public $externalIDs;
-    public $images;
-    public $summary;
-    public $nextAirDate;
-    public $airTime;
-    public $airDay;
-
-    function __construct($show_name){
-
-        $url = "http://api.tvmaze.com/singlesearch/shows?q=".$show_name."&embed=episodes";
-        $json = file_get_contents($url);
-        $show_array = json_decode($json, TRUE);
-
-
-
-        $this->id = (int) $show_array['id'];
-        $this->url = $show_array['url'];
-        $this->name = $show_array['name'];
-        $this->type = $show_array['type'];
-        $this->language = $show_array['language'];
-        $this->genres = $show_array['genres'];
-        $this->status = $show_array['status'];
-        $this->runtime = $show_array['runtime'];
-        $this->premiered = $show_array['premiered'];
-        $this->rating = $show_array['rating'];
-        $this->weight = $show_array['weight'];
-        $this->network_array = $show_array['network'];
-        $this->network = $show_array['network']['name'];
-        $this->webChannel = $show_array['webChannel'];
-        $this->externalIDs = $show_array['externals'];
-        $this->images = $show_array['image'];
-        $this->summary = strip_tags($show_array['summary']);
-
-        $current_date = date("Y-m-d");
-        foreach($show_array['_embedded']['episodes'] as $episode){
-            if($episode['airdate'] >= $current_date){
-                $this->nextAirDate = $episode['airdate'];
-                $this->airTime = date("g:i A", $episode['airtime']);
-                $this->airDay =  date('l', strtotime($episode['airdate']));
-                break;
-            }
-        }
-
-    }
-
-    function isEmpty(){
-        return($this->id == null || $this->id == 0 && $this->url == null && $this->name == null);
-    }
-
-};
-
 /**
  *
  * Check if show is in db
@@ -144,17 +78,17 @@ class TVShow {
  */
 
 $show_name = $_GET['show_name'];
-//getDataFromTVMaze($show_name);
 
 if(isShowInShowTable($conn, $show_name)){
     showInUserDB($conn, $show_name);
 }else{
 
-    $search_show = new TVShow($show_name);
+    $Client = new JPinkney\Client;
+
+    $search_show = $Client->TVMaze->singleSearch($show_name);
 
     //We need to double check after the search if its in the table otherwise it could store duplicates if they spelled something wrong
-
-    if($search_show->isEmpty()){
+    if($search_show === null || $search_show === ""){
         echo '<script language="javascript">';
         echo 'alert("Unfortunately that show is not available to track.")';
         echo '</script>';
