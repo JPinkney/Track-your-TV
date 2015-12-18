@@ -144,6 +144,18 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                                     <div class="form-group">
                                         <input class="form-control" name="phone_number" placeholder="Phone Number" id="phone_number">
                                     </div>
+                                    <div class="form-group">
+                                        <select id="carrier" name="carrier" class="form-control">
+                                            <option value="txt.att.net">AT&T</option>
+                                            <option value="messaging.sprintpcs.com">Sprint</option>
+                                            <option value="tmomail.net">T-Mobile</option>
+                                            <option value="vtext.com">Verizon</option>
+                                            <option value="message.alltel.com">All Tell</option>
+                                            <option value="pcs.rogers.com">Rogers</option>
+                                            <option value="msg.telus.com">Telus</option>
+                                            <option value="vmobl.com">Virgin Mobile</option>
+                                        </select>
+                                    </div>
                                     <div class="checkbox">
                                         <label>
                                             <input name="emails" id="email_notifications" type="checkbox">Email Notifications
@@ -156,7 +168,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                                     </div>
                                     <div class="center">
                                         <!-- Change this to a button or input when using this as a form -->
-                                        <button id="login-button" name="login-button" class="btn btn-sm btn-success center">Login</button>
+                                        <button id="login-button" name="login-button" class="btn btn-sm btn-success center">Save</button>
                                     </div>
                                 </fieldset>
                             </form>
