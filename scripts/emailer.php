@@ -1,10 +1,15 @@
 <?php
 
+/**
+  * Sends emails to users who opt into email notifications
+  *
+  * @author JPinkney
+  */
 require "../base-login.php";
 
 $current_date = date("Y-m-d");
 
-$query = $conn->prepare("SELECT show_name, airDate, username, email FROM shows, users WHERE email_notifications = TRUE and nextEpisode=?");
+$query = $conn->prepare("SELECT show_name, airDate, username, email FROM shows, users WHERE email_notifications=1 and nextEpisode=?");
 $query->execute(array($current_date));
 $results = $query->fetchAll();
 

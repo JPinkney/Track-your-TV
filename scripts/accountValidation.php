@@ -1,6 +1,10 @@
 <?php
-//ob_start();
 
+/**
+  *  Validates user accounts at the registration screen
+  *
+  *  @author JPinkney
+  */
 require "../base-login.php";
 
 $username = $_POST['username'];
@@ -19,7 +23,8 @@ if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty
         echo json_encode("Your emails do not match");
     }
 
-    if($password === $password_confirm & $email === $email_confirm){
+    if($password === $password_confirm && $email === $email_confirm){
+        
         //Checking to see if the username is already in the database
         $query = $conn->prepare("SELECT username FROM users WHERE username=?");
         $query->execute(array($username));
@@ -41,5 +46,4 @@ if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty
     }
 }
 
-//ob_end_clean();
 ?>

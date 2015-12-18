@@ -1,11 +1,10 @@
 <?php
 
 /**
- * loadPreviousData.php
- * Takes in username through a session
- * Gets all of the previous shows that the user has entered
+ * Load a users previous data
+ * 
+ * @author JPinkney
  */
-
 require('../base-login.php');
 
 $username = $_SESSION['Username'];

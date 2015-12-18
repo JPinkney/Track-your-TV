@@ -1,12 +1,21 @@
 <?php
 
+/**
+ * Check to see if the TVShow is in the Database, 
+ * if no then add it to the show list and user list
+ * if yes then just add it to the user list
+ * 
+ * @author JPinkney
+ */
 require "../base-login.php";
 require "../TVMazeIncludes.php";
 
-/*
- *
- * Checks to see if the show name is in the table called show
- *
+/**
+ * Check to see if the show name is the show table
+ * 
+ * @param PDO $conn the database connection 
+ * @param String $show_name the showname to check 
+ * @return Array of String
  */
 function isShowInShowTable($conn, $show_name){
     $query = $conn->prepare("SELECT show_name, airDate, nextEpisode FROM shows WHERE show_name=?");
@@ -15,20 +24,41 @@ function isShowInShowTable($conn, $show_name){
     return $results;
 }
 
+/**
+ * Add show to the user list
+ * 
+ * @param PDO $conn the database connection 
+ * @param int $show_id the id of the show 
+ * @param string $show_name the name of the show
+ * @param string $username the username of the current user 
+ * @return null
+ */
 function addShowToUsersList($conn, $show_id, $show_name, $username){
     $query = $conn->prepare("INSERT INTO user_shows (username, showID, show_name) VALUES (?, ?, ?)");
     $query->execute(array($username, $show_id, $show_name));
 }
 
+/**
+ * Add show to show list
+ * 
+ * @param PDO $conn the database connection
+ * @param int $id the id of the show 
+ * @param string $name the name of the show
+ * @param string $airs the date the show airs (in string format)
+ * @param string $newest_episode the newest airing episode
+ * @return null
+ */
 function addShowToShowsList($conn, $id, $name, $airs, $newest_episode){
     $query = $conn->prepare("INSERT INTO shows (showID, show_name, airDate, nextEpisode) VALUES (?, ?, ?, ?)");
     $query->execute(array((int)$id, $name, $airs, $newest_episode));
 }
 
-/*
- *
- * Check to see if the show is in the users database
- *
+/**
+ * Check if the show is in the user database
+ * 
+ * @param PDO $conn the database connection 
+ * @param string $show_name the name of the show 
+ * @return Array
  */
 function showInUserDB($conn, $show_name){
     //Check if the show is in the users table
@@ -75,7 +105,6 @@ function showInUserDB($conn, $show_name){
  *            Display to users list
  *
  */
-
 $show_name = $_GET['show_name'];
 
 if(isShowInShowTable($conn, $show_name)){
@@ -86,7 +115,6 @@ if(isShowInShowTable($conn, $show_name)){
 
     $search_show = $Client->TVMaze->singleSearch($show_name)[0];
     
-    //We need to double check after the search if its in the table otherwise it could store duplicates if they spelled something wrong
     if($search_show->id === null){
         echo json_encode(array("Not found"));
     }else{

@@ -17,3 +17,5 @@ require 'TVMaze/Character.php';
 require 'TVMaze/Crew.php';
 require 'TVMaze/Episode.php';
 require 'Client.php';
+
+?>

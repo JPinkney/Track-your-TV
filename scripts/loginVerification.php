@@ -1,16 +1,17 @@
 <?php
-//ob_start();
 
+/**
+ * Verify a users login
+ * 
+ * @author JPinkney
+ */
 require "../base-login.php";
 require "../password.php";
 
-//If the user is not logged in then they can't log in
-if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
-{
-    //header('Location: ../index.php');
-    //This section shouldn't be available because they are logged in and this switched to a single page application.
-}
-elseif(!empty($_POST['username']) && !empty($_POST['password']))
+/*
+ * Check to see if the username and password match something in the database
+ */
+if(!empty($_POST['username']) && !empty($_POST['password']))
 {
 
     $username = $_POST['username'];
@@ -34,7 +35,6 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
 
 }
 
-//ob_end_clean();
 ?>
 
 

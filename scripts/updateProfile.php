@@ -1,5 +1,10 @@
 <?php
 
+/**
+  * Update the profile of the current user
+  *
+  * @author JPinkney
+  */
 require "../base-login.php";
 
 $username = $_SESSION["Username"];

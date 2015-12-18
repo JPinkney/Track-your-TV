@@ -1,11 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joshpinkney
- * Date: 8/3/15
- * Time: 10:43 AM
- */
 
+/**
+ * Get the values of the checkbox values
+ * 
+ * @author JPinkney
+ */
 require "../base-login.php";
 
 $username = $_SESSION["Username"];
