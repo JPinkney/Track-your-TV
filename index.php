@@ -146,6 +146,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                                     </div>
                                     <div class="form-group">
                                         <select id="carrier" name="carrier" class="form-control">
+                                            <option value="null">No Carrier</option>
                                             <option value="txt.att.net">AT&T</option>
                                             <option value="messaging.sprintpcs.com">Sprint</option>
                                             <option value="tmomail.net">T-Mobile</option>
