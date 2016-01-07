@@ -5,6 +5,7 @@
   *
   *  @author JPinkney
   */
+ 
 require "../base-login.php";
 
 $username = $_POST['username'];
@@ -30,7 +31,7 @@ if(!empty($username) && !empty($password) && !empty($password_confirm) && !empty
         $query->execute(array($username));
         $results = $query->fetchAll();
 
-        //If the username isn't in the database then add the account
+        //If the username isn't in the database then add the account and setup the session
         if($results == NULL){
             $query = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
             $pass = password_hash($password, PASSWORD_BCRYPT);

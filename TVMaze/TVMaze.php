@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * TVMaze Class represents all of the eligible calls the api wrapper can make 
+ *
+ * @package JPinkney\TVMaze
+ * @author  jpinkney
+ */
+
 namespace JPinkney\TVMaze;
 
 class TVMaze {

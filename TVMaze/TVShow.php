@@ -1,19 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: joshpinkney
- * Date: 9/15/15
- * Time: 2:16 PM
+ * TVShow Class represents the general model for a tv show
+ *
+ * @package JPinkney\TVMaze
+ * @author  jpinkney
  */
 
 namespace JPinkney\TVMaze;
 
-//Check back here if we can move the episode data to the episode class later
-/**
- * Class TVShow
- *
- * @package JPinkney\TVMaze
- */
 class TVShow extends TVProduction {
 
 	/**

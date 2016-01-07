@@ -1,8 +1,10 @@
 <?php
+
 /**
- * User: jpinkney
- * Date: 9/15/15
- * Time: 2:15 PM
+ * Character Class represents the general model for a character
+ *
+ * @package JPinkney\TVMaze
+ * @author  jpinkney
  */
 
 namespace JPinkney\TVMaze;

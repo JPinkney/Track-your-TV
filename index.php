@@ -13,7 +13,7 @@
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <!-- Main Style Sheet -->
-    <link href="css/main_style.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <!-- Javascript Table Content Loader -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -21,46 +21,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="js/displayContent.js"></script>
-
-    <style type="text/css">
-        .vertical-alignment-helper {
-            display:table;
-            height: 100%;
-            width: 100%;
-            pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
-        }
-        .vertical-align-center {
-            /* To center vertically */
-            display: table-cell;
-            vertical-align: middle;
-            pointer-events:none;
-        }
-        .modal-content {
-            /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-            width:inherit;
-            height:inherit;
-            /* To center horizontally */
-            margin: 0 auto;
-            pointer-events: all;
-        }
-        .text-button button {
-            background:none!important;
-            border:none!important;
-            padding:0!important;
-            font: inherit!important;
-            /*border is optional*/
-            border-bottom:1px solid #444!important;
-            cursor: pointer!important;
-        }
-        .register-fix{
-            padding-left: 0px;
-            margin-bottom: 1em;
-        }
-        .center {
-            margin:0 auto!important;
-            text-align:center;
-        }
-    </style>
 </head>
 
 <body>

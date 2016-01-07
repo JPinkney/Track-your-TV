@@ -1,10 +1,11 @@
 <?php
 
 /**
-  * This is the file that the cron job runs
+  * This is the file that the cron job runs that will update all of the series daily
   *
   * @author JPinkney
   */
+ 
 require "../base-login.php";
 
 $current_date = date("Y-m-d");

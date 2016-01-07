@@ -1,17 +1,14 @@
 <?php
+
 /**
- * Creator: joshpinkney
- * Date: 9/15/15
- * Time: 2:16 PM
+ * TVProduction Class represents the general model for a tv production
+ *
+ * @package JPinkney\TVMaze
+ * @author  jpinkney
  */
 
 namespace JPinkney\TVMaze;
 
-/**
- * Class TVProduction
- *
- * @package JPinkney\TVMaze
- */
 class TVProduction {
 
 	/**

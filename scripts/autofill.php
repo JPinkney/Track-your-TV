@@ -5,6 +5,7 @@
  *
  * @author JPinkney
  */
+
 include "../base-login.php";
 
 $query = $conn->prepare("SELECT show_name FROM shows");

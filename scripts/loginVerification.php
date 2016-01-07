@@ -5,6 +5,7 @@
  * 
  * @author JPinkney
  */
+
 require "../base-login.php";
 require "../password.php";
 
@@ -20,6 +21,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
     $query = $conn->prepare("SELECT username, password, email from users WHERE username=?");
     $query->execute(array($username));
     $results = $query->fetchAll();
+    
     if($results != null){
         if(password_verify($password, $results[0]['password'])){
             $_SESSION['Username'] = $username;

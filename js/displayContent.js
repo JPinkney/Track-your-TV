@@ -1,8 +1,8 @@
 /**
- * Decides what to do after the user has clicked the button
+ * Displays the TV Show data assosiated with the value inputted
+ * 
  * @return None
  */
-
 function displayContent(){
     var show_title = $('#urlText').val();
     var related_show = checkShows(show_title);
@@ -18,6 +18,11 @@ function displayContent(){
     
 }
 
+/**
+ * Load the users previous data after they log in
+ * 
+ * @return None
+ */
 function loadPreviousData(){
     $.getJSON("scripts/loadPreviousData.php", function(data){
         for (var i = 0; i < data.length; i++) {
@@ -25,41 +30,6 @@ function loadPreviousData(){
         }
     });
 }
-
-$(function() {
-
-    // When the form is submitted
-    $("#login-modal").submit(function(event) {
-        event.preventDefault();
-        $.post("scripts/loginVerification.php", $(this).serialize(), function(data){
-            if(data == true){
-                window.location.reload();
-            }else{
-                $('#error').text(data);
-            }
-        });
-    });
-
-    // When the form is submitted
-    $("#register-modal").submit(function(event) {
-        event.preventDefault();
-
-        $.post("scripts/accountValidation.php", $(this).serialize(), function(data){
-            if(data == true){
-                window.location.reload();
-            }else{
-                $('#register-error').text(data);
-            }
-        });
-    });
-
-    $("#profile-modal").submit(function(event) {
-        event.preventDefault();
-        $.post("scripts/updateProfile.php", $(this).serialize(), function(data){
-            $('#myModal').modal('hide');
-        });
-    });
-});
 
 /**
  * Adds the auto complete to the text section
@@ -81,13 +51,65 @@ function checkShows(n){
 }
 
 /**
- * Sets the autofill of text
+ * Sets the autofill of text while the user is typing
+ * 
  * @return None
  */
 $(function autoFilling() {
     $( "#urlText" ).autocomplete({
         source: "scripts/autofill.php",
         autoFocus: true
+    });
+});
+
+/**
+ * Events that must have the document loaded before trying to invoke them 
+ */
+$(document).ready(function() {
+
+    /**
+     * When log in is submitted it checks if the username and password are in the database
+     * If they are then log in
+     */
+    $("#login-modal").submit(function(event) {
+        event.preventDefault();
+
+        $.post("scripts/loginVerification.php", $(this).serialize(), function(data){
+            if(data === true){
+                window.location.reload();
+            }else{
+                $('#error').text(data);
+            }
+        });
+
+    });
+
+    /**
+     * Register an account with the given username if the username isn't taken
+     */
+    $("#register-modal").submit(function(event) {
+        event.preventDefault();
+
+        $.post("scripts/accountValidation.php", $(this).serialize(), function(data){
+            if(data === true){
+                window.location.reload();
+            }else{
+                $('#register-error').text(data);
+            }
+        });
+
+    });
+
+    /**
+     * Update the users profile if they enter phone number etc etc
+     */
+    $("#profile-modal").submit(function(event) {
+        event.preventDefault();
+
+        $.post("scripts/updateProfile.php", $(this).serialize(), function(data){
+            $('#myModal').modal('hide');
+        });
+
     });
 });
 
@@ -100,24 +122,3 @@ $(document).keypress(function(event){
         $('#submitURL').click();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

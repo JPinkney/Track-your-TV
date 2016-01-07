@@ -1,17 +1,14 @@
 <?php
+
 /**
- * Creator: jpinkney
- * Date: 9/15/15
- * Time: 2:12 PM
+ * Crew Class represents the general model for a crew
+ *
+ * @package JPinkney\TVMaze
+ * @author  jpinkney
  */
 
 namespace JPinkney\TVMaze;
 
-/**
- * Class Crew
- *
- * @package JPinkney\TVMaze
- */
 class Crew {
 
 	/**

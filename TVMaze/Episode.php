@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: joshpinkney
- * Date: 9/15/15
- * Time: 2:13 PM
+ * Episode Class represents the general model for an episode
+ *
+ * @package JPinkney\TVMaze
+ * @author  jpinkney
  */
 
 namespace JPinkney\TVMaze;
