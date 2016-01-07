@@ -75,12 +75,12 @@ $(document).ready(function() {
         event.preventDefault();
 
         $.post("scripts/loginVerification.php", $(this).serialize(), function(data){
-            if(data === true){
+            if(data == 1){
                 window.location.reload();
             }else{
                 $('#error').text(data);
             }
-        });
+        }); 
 
     });
 
@@ -91,7 +91,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         $.post("scripts/accountValidation.php", $(this).serialize(), function(data){
-            if(data === true){
+            if(data == 1){
                 window.location.reload();
             }else{
                 $('#register-error').text(data);
