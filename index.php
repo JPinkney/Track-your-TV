@@ -111,7 +111,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
                                             <option value="messaging.sprintpcs.com">Sprint</option>
                                             <option value="tmomail.net">T-Mobile</option>
                                             <option value="vtext.com">Verizon</option>
-                                            <option value="message.alltel.com">All Tell</option>
+                                            <option value="message.alltel.com">Alltell</option>
                                             <option value="pcs.rogers.com">Rogers</option>
                                             <option value="msg.telus.com">Telus</option>
                                             <option value="vmobl.com">Virgin Mobile</option>
