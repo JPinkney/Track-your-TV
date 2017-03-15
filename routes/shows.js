@@ -1,6 +1,14 @@
 var tvmaze = require("tvmaze-node");
 var Show = require('../models/show');
 
+/**
+ * Get a show with the given name
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/getShow
+ */
 exports.getShow = function(req, res){
 
     let showname = req.query.showname;
@@ -24,9 +32,6 @@ exports.getShow = function(req, res){
                 }
 
                 response = JSON.parse(response);
-                //console.log(response);
-                console.log("break");
-                console.log(response.schedule.days);
 
                 var currentDateTime = (new Date(Date.now())).toString();
                 var nextAirStamp = response._embedded.episodes.pop().airstamp;
@@ -51,6 +56,44 @@ exports.getShow = function(req, res){
 
             });
         }
+
+    });
+
+};
+
+/**
+ * Update the air date of a show with given name
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/shows/updateShowAirDate
+ */
+exports.updateShowAirDate = function(req, res){
+
+    let showname = req.query.showname;
+
+    tvmaze.singleShow(showname, "episodes", function(error, response) {
+
+        if(error){
+            throw error;
+        }
+
+        response = JSON.parse(response);
+
+        var currentDateTime = (new Date(Date.now())).toString();
+        var nextAirStamp = response._embedded.episodes.pop().airstamp;
+        var nextAirDate = nextAirStamp > currentDateTime ? nextAirStamp : "break";
+
+        Show.findOneAndUpdate({"name": showname}, {$set: {"nextAirDate": nextAirDate}}, function(err, newShow){
+            
+            if(err){
+                throw err;
+            }
+
+            res.send(newShow);
+
+        });
 
     });
 
