@@ -62,6 +62,30 @@ exports.getShow = function(req, res){
 };
 
 /**
+ * Delete a show with the given name
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/shows
+ */
+exports.deleteShow = function(req, res){
+
+    let showname = req.query.showname;
+
+    Show.remove({"showname": showname}, function(err, show){
+        
+        if(err){
+            throw err;
+        }   
+
+        res.send({"code": 200, "message": "Show deleted"});
+
+    });
+
+};
+
+/**
  * Update the air date of a show with given name
  *
  * @param {object} req request object
