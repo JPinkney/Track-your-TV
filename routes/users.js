@@ -1,19 +1,36 @@
 var User = require('../models/user');
-
 var bcrypt = require("bcrypt-nodejs");
 
+/**
+ * Update a user with new given information
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+* @url localhost:3000/api/users
+ */
 exports.updateUser = function(req, res){
 
     let user = req.body.username;
 
-    User.findOneAndUpdate({ "username" : user},req.body, {new: true}, function(err, userReturn){
+    User.findOneAndUpdate({ "username" : user}, req.body, {new: true}, function(err, userReturn){
+    
         if (err) throw err;
-        console.log(userReturn);
+
         res.send(userReturn);
+    
     });
 
 };
 
+/**
+ * Delete a user with given username
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/users
+ */
 exports.deleteUser = function(req, res){
 
     let user = req.body.username;
@@ -21,13 +38,21 @@ exports.deleteUser = function(req, res){
     User.findOneAndRemove({ "username" : user}, function(err){
     
         if (err) throw err;
-        console.log("User Removed");
+
         res.send("Success");
     
     });
 
 };
 
+/**
+ * Register a user
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/users
+ */
 exports.registerUser = function(req, res){
 
     // Checking if the fields (by name) aren't empty:
@@ -108,7 +133,14 @@ exports.registerUser = function(req, res){
 
 };
 
-
+/**
+ * Validate the user to see if they can login
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/users/validateUser
+ */
 exports.validateUser = function(req, res){
 
     let username = req.body.username;

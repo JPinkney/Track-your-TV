@@ -9,6 +9,8 @@ var expressValidator = require('express-validator');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var shows = require('./routes/shows');
+var login = require('./routes/login');
+var signup = require('./routes/signup');
 //var db_funcs = require('./routes/database_routes');
 
 var app = express();
@@ -38,8 +40,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/signup', signup);
+app.use('/login', login);
 app.route('/api/users').post(users.registerUser).put(users.updateUser).delete(users.deleteUser);
-app.route('/api/users/validate').post(users.validateUser);
+app.route('/api/users/validateUser').post(users.validateUser);
 app.route('/api/shows').get(shows.getShow);
 app.route('/api/shows/updateShowAirDate').put(shows.updateShowAirDate);
 
