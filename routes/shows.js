@@ -1,5 +1,6 @@
 var tvmaze = require("tvmaze-node");
 var Show = require('../models/show');
+var FrontPage = require('../models/frontpage');
 
 /**
  * Get a show with the given name
@@ -42,7 +43,7 @@ exports.getShow = function(req, res){
                     "name": response.name,
                     "airTime": response.schedule.time,
                     "airDays": response.schedule.days,
-                    "image": response.image.original,
+                    "image": response.image.medium,
                     "nextAirDate": nextAirDate
                 });
 
@@ -118,6 +119,66 @@ exports.updateShowAirDate = function(req, res){
             res.send(newShow);
 
         });
+
+    });
+
+};
+
+/**
+ * Get a show with the given name and store in frontpage
+ *
+ * @param {object} req request object
+ * @param {object} res response object
+ * 
+ * @url localhost:3000/api/getFrontPageShow
+ */
+exports.getFrontPageShow = function(req, res){
+
+    let showname = req.query.showname;
+
+    FrontPage.find({"showname": showname}, function(err, show){
+        
+        if(err){
+            throw err;
+        }   
+
+        if(show.length != 0){
+       
+            res.send({"code": 400, "message": "already tracking show"});
+       
+        }else{
+       
+            tvmaze.singleShow(showname, "episodes", function(error, response) {
+        
+                if(error){
+                    throw error;
+                }
+
+                response = JSON.parse(response);
+
+                var currentDateTime = (new Date(Date.now())).toString();
+                var nextAirStamp = response._embedded.episodes.pop().airstamp;
+                var nextAirDate = nextAirStamp > currentDateTime ? nextAirStamp : "break";
+
+                var newShow = FrontPage({
+                    "id": response.id,
+                    "name": response.name,
+                    "airTime": response.schedule.time,
+                    "airDays": response.schedule.days,
+                    "image": response.image.medium,
+                    "nextAirDate": nextAirDate
+                });
+
+                newShow.save(function(err){
+                    if(err){
+                        throw err;
+                    }
+
+                    res.send({"code": 200, "message": "save complete"});
+                });
+
+            });
+        }
 
     });
 

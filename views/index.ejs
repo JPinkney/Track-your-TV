@@ -3,6 +3,8 @@
   <head>
     <title><%= title %></title>
 	   
+	<script src="https://code.jquery.com/jquery-3.2.0.slim.js"   integrity="sha256-8YrBCTDoQjO4CBT1WVvMH2/610BH0DjZlxFOCIgK7AM="   crossorigin="anonymous"></script>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -13,6 +15,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
     <script type="text/javascript" src="/javascripts/main.js"></script>
   </head>
   <body>
@@ -43,13 +46,23 @@
 	        </div>
 	    </div>
 	</div>
+
+
+
 	<div id="mySidenav" class="sidenav">
 	    <div class="container" style="background-color: #2874f0; padding-top: 10px;">
 	        <span class="sidenav-heading">Home</span>
 	        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 	    </div>
-	    <a href="http://clashhacks.in/">Login</a>
-	    <a href="http://clashhacks.in/">Signup</a>
+	    <a href="">Login</a>
+	    <a href="">Signup</a>
+	</div>
+	<div>
+		<div class="col-sm-12 center" id="frontpage-shows">
+		<% for(var i=0; i<frontpage.length; i++) { %>
+   			<img width="150" height="200" src= <%= frontpage[i].image %>></img>
+		<% } %>
+		</div>
 	</div>
   </body>
 </html>
