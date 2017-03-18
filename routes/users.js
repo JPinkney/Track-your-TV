@@ -152,7 +152,7 @@ exports.validateUser = function(req, res){
             res.send("No user found with that username");
         }else{
             if(bcrypt.compareSync(password, userReturn[0].password)){
-                res.send(userReturn);
+                res.render('members', { title: 'Track Your Tv', user: userReturn});
             }else{
                 res.send("Incorrect password");
             }

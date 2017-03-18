@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var show = require('../models/show');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-	FrontPage.find({}, function(err, app){
-  		res.render('index', { title: 'Track Your Tv'});
+	show.find({}, function(err, shows){
+		res.render('members', { title: 'Track Your Tv', user:"undefined", shows: shows});
 	});
 
 });

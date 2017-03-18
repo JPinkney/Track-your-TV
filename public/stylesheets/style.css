@@ -9,10 +9,6 @@
     position: fixed;
     z-index:10;
     background-color: rgba(168, 235, 255, 0.2);
-    /*filter: blur(2px); 
--moz-filter: blur(2px);
--o-filter: blur(2px); 
--ms-filter: blur(2px);*/
 }
 
 .background {
@@ -35,8 +31,10 @@
      background-size:cover;
     padding-left:20%;
     padding-top:20%;
-    -webkit-filter: blur(1px);
+    -webkit-filter: blur(5px);
+    opacity:.2;
 }
+
 .mask {
     width: 100%;
     height: 100%;
@@ -53,16 +51,16 @@ span
 }
 
 .middle-box {
-    background-color: rgba(16, 45, 94, 0.9);
+    background-color: rgba(16, 45, 94, 0.95);
     width:100%;
-    height:100px;
+    height:200px;
     margin: 0 auto;
     top:40%;
     position: fixed;    
     color:white;
     text-align: center;
     vertical-align: middle;
-    line-height: 100px;
+    line-height: 200px;
 }
 
 .row1{

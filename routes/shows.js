@@ -1,6 +1,6 @@
 var tvmaze = require("tvmaze-node");
 var Show = require('../models/show');
-var FrontPage = require('../models/frontpage');
+var User = require('../models/user');
 
 /**
  * Get a show with the given name
@@ -125,18 +125,18 @@ exports.updateShowAirDate = function(req, res){
 };
 
 /**
- * Get a show with the given name and store in frontpage
+ * Get a show with the given name
  *
  * @param {object} req request object
  * @param {object} res response object
  * 
- * @url localhost:3000/api/getFrontPageShow
+ * @url localhost:3000/api/getShow
  */
-exports.getFrontPageShow = function(req, res){
+exports.addShowToUser = function(req, res){
 
-    let showname = req.query.showname;
+    let username = req.body.username;
 
-    FrontPage.find({"showname": showname}, function(err, show){
+    Show.find({"showname": showname}, function(err, show){
         
         if(err){
             throw err;
@@ -160,7 +160,7 @@ exports.getFrontPageShow = function(req, res){
                 var nextAirStamp = response._embedded.episodes.pop().airstamp;
                 var nextAirDate = nextAirStamp > currentDateTime ? nextAirStamp : "break";
 
-                var newShow = FrontPage({
+                var newShow = Show({
                     "id": response.id,
                     "name": response.name,
                     "airTime": response.schedule.time,

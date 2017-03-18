@@ -15,25 +15,21 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/members.css' />
     
     <script type="text/javascript" src="/javascripts/main.js"></script>
   </head>
   <body>
 
-  		<div class="background"></div>
-		<div class="mask">
-		    <div class="bluredBackground"></div>
-		</div>
-		<div class="content">
-
+  		<% if (user) { %>
 
 			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 			<div id="flipkart-navbar">
 			    <div class="container">
 			        <div class="row row1">
 			            <ul class="largenav pull-right">
-			                <li class="upper-links"><a class="links" href="/login">Login</a></li>
-			                <li class="upper-links"><a class="links" href="/signup">Signup</a></li>
+			                <li class="upper-links"><a class="links" href="/login"><%= user.username %></a></li>
+			                <li class="upper-links"><a class="links" href="/signout">Signout</a></li>
 			            </ul>
 			        </div>
 			        <div class="row row2">
@@ -53,26 +49,22 @@
 			        </div>
 			    </div>
 			</div>
-
-			<div class="middle-box">
-				<div class="middle-box-text">
-					<span><h5>Track your TV is a simple way to track your favourite tv shows.</h5><h5>Sign up to receive text and email notifications when your shows are about to air.</h5></span>
-					
-				</div>
-			</div>
-
-
-
+		
 			<div id="mySidenav" class="sidenav">
 			    <div class="container" style="background-color: #2874f0; padding-top: 10px;">
 			        <span class="sidenav-heading">Home</span>
 			        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 			    </div>
-			    <a href="">Login</a>
-			    <a href="">Signup</a>
+			    <a href="/signout">Signout</a>
 			</div>
 
-		</div>
+		<% } else { %>
+
+			<script type="text/javascript">
+				window.location.replace("/");	
+			</script>
+
+		<% } %>
 
 	    
   </body>
