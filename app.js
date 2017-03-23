@@ -52,6 +52,7 @@ app.route('/api/users').post(users.registerUser).put(users.updateUser).delete(us
 app.route('/api/users/validateUser').post(users.validateUser);
 app.route('/api/shows').get(shows.getShow).delete(shows.deleteShow);
 app.route('/api/shows/updateShowAirDate').put(shows.updateShowAirDate);
+app.route('/api/shows/addShowToUser').post(shows.addShowToUser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

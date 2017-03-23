@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var Show = require('../models/show');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-	User.find({username: req.session.user.username}, function(err, shows){
-		res.render('members', { title: 'Track Your Tv', user:req.session.user, shows: shows});
+	console.log(req.session.user.shows);
+
+	Show.find(req.session.user.shows, function(err, newShows){
+		res.render('members', { title: 'Track Your Tv', user: req.session.user, shows: newShows});
 	});
 
 });

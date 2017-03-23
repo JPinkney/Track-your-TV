@@ -1,6 +1,7 @@
 var tvmaze = require("tvmaze-node");
 var Show = require('../models/show');
 var User = require('../models/user');
+var mongoose = require('mongoose');
 
 /**
  * Get a show with the given name
@@ -130,22 +131,32 @@ exports.updateShowAirDate = function(req, res){
  * @param {object} req request object
  * @param {object} res response object
  * 
- * @url localhost:3000/api/getShow
+ * @url localhost:3000/api/shows/addShowToUser
  */
 exports.addShowToUser = function(req, res){
 
-    let username = req.body.username;
+    let username = req.session.user.username;
+    let showname = req.body.showname;
 
-    Show.find({"showname": showname}, function(err, show){
+    Show.find({"name": showname}, function(err, show){
         
         if(err){
             throw err;
         }   
 
+        //Its already in the DB so we just need to add the object ID to the user
         if(show.length != 0){
+
+            req.session.user.shows.push(mongoose.mongo.ObjectId(show._id));
+            User(req.session.user).update(req.session.user, function(err){
+                if(err){
+                    throw err;
+                }
+
+                res.send({"code": 200, "message": "save complete"});
+            });
        
-            res.send({"code": 400, "message": "already tracking show"});
-       
+        //Its not in the DB so we need to search tvmaze and add to shows and user
         }else{
        
             tvmaze.singleShow(showname, "episodes", function(error, response) {
@@ -174,7 +185,17 @@ exports.addShowToUser = function(req, res){
                         throw err;
                     }
 
-                    res.send({"code": 200, "message": "save complete"});
+                    req.session.user.shows.push(mongoose.mongo.ObjectId(newShow._id));
+
+                    User(req.session.user).update(req.session.user, function(err){
+                        if(err){
+                            throw err;
+                        }
+
+                        res.send({"code": 200, "message": "save complete"});
+                    
+                    });
+
                 });
 
             });

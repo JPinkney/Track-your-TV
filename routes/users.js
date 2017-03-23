@@ -122,7 +122,7 @@ exports.registerUser = function(req, res){
                         throw err;
                     }
 
-                    req.session.user = userReturn;
+                    req.session.user = userReturn[0];
                     res.redirect('/members');
                 });
 
@@ -153,7 +153,7 @@ exports.validateUser = function(req, res){
             res.send("No user found with that username");
         }else{
             if(bcrypt.compareSync(password, userReturn[0].password)){
-                req.session.user = userReturn;
+                req.session.user = userReturn[0];
                 res.redirect('/members');
             }else{
                 res.send("Incorrect password");
