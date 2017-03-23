@@ -13,6 +13,7 @@ var shows = require('./routes/shows');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var members = require('./routes/members');
+var logout = require('./routes/logout');
 //var db_funcs = require('./routes/database_routes');
 
 var app = express();
@@ -46,6 +47,7 @@ app.use('/', index);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/members', members);
+app.use('/logout', logout);
 app.route('/api/users').post(users.registerUser).put(users.updateUser).delete(users.deleteUser);
 app.route('/api/users/validateUser').post(users.validateUser);
 app.route('/api/shows').get(shows.getShow).delete(shows.deleteShow);
