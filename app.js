@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -37,6 +38,7 @@ app.use(expressValidator({
 
     }
 }));
+app.use(session({ secret: 'apple', cookie: { maxAge: 60000 }}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

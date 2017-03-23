@@ -122,7 +122,8 @@ exports.registerUser = function(req, res){
                         throw err;
                     }
 
-                    res.send(newUser);
+                    req.session.user = userReturn;
+                    res.redirect('/members');
                 });
 
             }
@@ -152,7 +153,8 @@ exports.validateUser = function(req, res){
             res.send("No user found with that username");
         }else{
             if(bcrypt.compareSync(password, userReturn[0].password)){
-                res.render('members', { title: 'Track Your Tv', user: userReturn});
+                req.session.user = userReturn;
+                res.redirect('/members');
             }else{
                 res.send("Incorrect password");
             }
@@ -161,3 +163,13 @@ exports.validateUser = function(req, res){
     });
 
 };
+
+
+
+
+
+
+
+
+
+
