@@ -27,9 +27,6 @@
 		<title>Signup</title>
 	</head>
 	<body>
-
-		<% if (user) { %>
-		
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
@@ -40,13 +37,13 @@
 	            </div> 
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="/api/users">
-
+						
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="username" id="username" value=<%= user.username %> />
 								</div>
 							</div>
 						</div>
@@ -76,21 +73,21 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<input type="text" class="form-control" name="email" id="email" value=<%= user.email %>/>
 								</div>
 							</div>
-						</div>
+						</div>			
 
 						<div class="form-group">
 							<label for="phonenumber" class="cols-sm-2 control-label">Phone Number</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="phonenumber" class="form-control" name="phonenumber" id="phonenumber" placeholder=<%= user.phonenumber %> />
+									<input type="phonenumber" class="form-control" name="phonenumber" id="phonenumber" value=<%= user.phonenumber %> />
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="checkbox">
 							<label><input type="checkbox" value="">Email Notifications</label>
 						</div>
@@ -99,23 +96,13 @@
 						</div>
 
 						<div class="login-register">
-							<input type="submit" value="Register">
+							<input type="submit" value="Update">
 				        </div>
-						<div class="login-register">
-				            <a href="/login">Login</a>
-				        </div>
+
 					</form>
 				</div>
 			</div>
 		</div>
-
-		<% } else { %>
-
-			<script type="text/javascript">
-				window.location.replace("/");	
-			</script>
-
-		<% } %>
 
 	</body>
 </html>

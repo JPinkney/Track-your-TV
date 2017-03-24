@@ -28,7 +28,7 @@
 			    <div class="container">
 			        <div class="row row1">
 			            <ul class="largenav pull-right">
-			                <li class="upper-links"><a class="links" href="/login"><%= user.username %></a></li>
+			                <li class="upper-links"><a class="links" href="/profile"><%= user.username %></a></li>
 			                <li class="upper-links"><a class="links" href="/logout">Logout</a></li>
 			            </ul>
 			        </div>
@@ -51,7 +51,7 @@
 			</div>
 
 			<% for(var i=0; i < shows.length; i++) {%>
-			   <li><%= shows[i] %></li>
+			   <img src=<%= shows[i].image %>>
 			<% } %>
 
 			<div id="mySidenav" class="sidenav">

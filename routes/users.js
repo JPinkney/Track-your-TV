@@ -34,6 +34,8 @@ exports.updateUser = function(req, res){
 exports.deleteUser = function(req, res){
 
     let user = req.body.username;
+    let password = bcrypt.hashSync(req.body.password);
+    req.body.password = password;
     
     User.findOneAndRemove({ "username" : user}, function(err){
     

@@ -21,6 +21,12 @@ var userSchema = new Schema(
     	phonennumber: {
     	    type: String
     	},
+        emailnotifications:{
+            type: Boolean
+        },
+        textnotifications:{
+            type: Boolean
+        },
         shows: {
             type: [mongoose.Schema.Types.ObjectId]
         }
