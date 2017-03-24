@@ -1,3 +1,36 @@
-body {
-	
+.show-container {
+    width:210px;
+    float:left;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  width:auto;
+  height:auto;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  transform: translate(13%, -325%);
+  -ms-transform: translate(13%, -325%)
+}
+
+.show-container:hover .image {
+  opacity: 0.3;
+}
+
+.show-container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }

@@ -51,7 +51,12 @@
 			</div>
 
 			<% for(var i=0; i < shows.length; i++) {%>
-			   <img src=<%= shows[i].image %>>
+  				<div class="show-container">
+				  <img src=<%= shows[i].image %> alt="Avatar" class="image">
+				  <div class="middle">
+				    <div class="text">Remove Show</div>
+				  </div>
+				</div>
 			<% } %>
 
 			<div id="mySidenav" class="sidenav">
