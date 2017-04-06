@@ -28,7 +28,7 @@ var userSchema = new Schema(
             type: Boolean
         },
         shows: {
-            type: [mongoose.Schema.Types.ObjectId]
+            type: [String]
         }
     }
 );

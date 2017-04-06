@@ -50,14 +50,16 @@
 			    </div>
 			</div>
 
-			<% for(var i=0; i < shows.length; i++) {%>
-  				<div class="show-container">
-				  <img src=<%= shows[i].image %> alt="Avatar" class="image">
-				  <div class="middle">
-				    <div class="text">Remove Show</div>
-				  </div>
-				</div>
-			<% } %>
+			<div id="middle-container">
+				<% for(var i=0; i < shows.length; i++) {%>
+	  				<div class="show-container">
+					  <img src=<%= shows[i].image %> alt="Avatar" class="image">
+					  <div class="middle">
+					    <div class="text">Remove Show</div>
+					  </div>
+					</div>
+				<% } %>
+			</div>
 
 			<div id="mySidenav" class="sidenav">
 			    <div class="container" style="background-color: #2874f0; padding-top: 10px;">
@@ -82,7 +84,11 @@
 				var showToAdd = $('#search-input').val();
 				alert(showToAdd);
 				$.post('/api/shows/addShowToUser', {'showname': showToAdd}, function(result){
-					alert(result);
+
+					$('#middle-container').append('<div class="show-container">');
+					$('#middle-container').append('<img src=' + result.shows.slice(-1)[0] + ' alt="Avatar" class="image">');
+					$('#middle-container').append('<div class="middle"><div class="text">Remove Show</div></div>');
+				
 				});
 			});
 

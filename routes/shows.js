@@ -145,15 +145,18 @@ exports.addShowToUser = function(req, res){
         }   
 
         //Its already in the DB so we just need to add the object ID to the user
-        if(show.length != 0){
+        if(show.length !== 0){
 
-            req.session.user.shows.push(mongoose.Types.ObjectId(show.id));
+            req.session.user.shows.push(show[0].id);
+            console.log("hit?");
             User(req.session.user).update(req.session.user, function(err){
                 if(err){
                     throw err;
                 }
 
-                res.send({"code": 200, "message": "save complete"});
+                console.log("hit?2");
+
+                res.send({"shows": req.session.user.shows});
             });
        
         //Its not in the DB so we need to search tvmaze and add to shows and user
@@ -185,14 +188,14 @@ exports.addShowToUser = function(req, res){
                         throw err;
                     }
 
-                    req.session.user.shows.push(mongoose.Types.ObjectId(newShow.id));
+                    req.session.user.shows.push(newShow.id);
 
                     User(req.session.user).update(req.session.user, function(err){
                         if(err){
                             throw err;
                         }
 
-                        res.send({"code": 200, "message": "save complete"});
+                        res.send({"shows": req.session.user.shows});
                     
                     });
 
