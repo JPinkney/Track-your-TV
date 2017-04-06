@@ -147,7 +147,7 @@ exports.addShowToUser = function(req, res){
         //Its already in the DB so we just need to add the object ID to the user
         if(show.length != 0){
 
-            req.session.user.shows.push(mongoose.mongo.ObjectId(show._id));
+            req.session.user.shows.push(mongoose.Types.ObjectId(show.id));
             User(req.session.user).update(req.session.user, function(err){
                 if(err){
                     throw err;
@@ -185,7 +185,7 @@ exports.addShowToUser = function(req, res){
                         throw err;
                     }
 
-                    req.session.user.shows.push(mongoose.mongo.ObjectId(newShow._id));
+                    req.session.user.shows.push(mongoose.Types.ObjectId(newShow.id));
 
                     User(req.session.user).update(req.session.user, function(err){
                         if(err){

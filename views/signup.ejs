@@ -27,8 +27,6 @@
 		<title>Signup</title>
 	</head>
 	<body>
-
-		<% if (user) { %>
 		
 		<div class="container">
 			<div class="row main">
@@ -86,7 +84,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="phonenumber" class="form-control" name="phonenumber" id="phonenumber" placeholder=<%= user.phonenumber %> />
+									<input type="phonenumber" class="form-control" name="phonenumber" id="phonenumber" placeholder="Enter your phone number (Optional)" />
 								</div>
 							</div>
 						</div>
@@ -94,6 +92,7 @@
 						<div class="checkbox">
 							<label><input type="checkbox" value="">Email Notifications</label>
 						</div>
+
 						<div class="checkbox">
 						 	<label><input type="checkbox" value="">Text Notifications</label>
 						</div>
@@ -108,14 +107,6 @@
 				</div>
 			</div>
 		</div>
-
-		<% } else { %>
-
-			<script type="text/javascript">
-				window.location.replace("/");	
-			</script>
-
-		<% } %>
 
 	</body>
 </html>

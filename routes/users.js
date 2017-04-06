@@ -124,7 +124,7 @@ exports.registerUser = function(req, res){
                         throw err;
                     }
 
-                    req.session.user = userReturn[0];
+                    req.session.user = newUser;
                     res.redirect('/members');
                 });
 
