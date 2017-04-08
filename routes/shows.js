@@ -24,8 +24,10 @@ exports.addShowToUser = function(req, res){
         }   
 
         //Check if they are already tracking
-        User.find({"id": {"in": show[0].id}}, function(err, result){
+        User.find({"shows": {"$in": show[0].id}}, function(err, result){
             
+            console.log(result);
+
             if(result.length === 0){
                 
                 //Its already in the DB so we just need to add the object ID to the user
