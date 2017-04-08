@@ -82,13 +82,18 @@
 			$('#search-button').on('click', function(){
 				//Do the request to the backend
 				var showToAdd = $('#search-input').val();
-				alert(showToAdd);
+
 				$.post('/api/shows/addShowToUser', {'showname': showToAdd}, function(result){
 
-					$('#middle-container').append('<div class="show-container">');
-					$('#middle-container').append('<img src=' + result.shows.slice(-1)[0] + ' alt="Avatar" class="image">');
-					$('#middle-container').append('<div class="middle"><div class="text">Remove Show</div></div>');
-				
+					if(result.message){
+						alert(result.message);
+					}else{
+						$('#middle-container').append('<div class="show-container">');
+						$('#middle-container').append('<img src=' + result.shows.slice(-1)[0] + ' alt="Avatar" class="image">');
+						$('#middle-container').append('<div class="middle"><div class="text">Remove Show</div></div>');
+					}
+	
+
 				});
 			});
 
