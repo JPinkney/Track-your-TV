@@ -37,7 +37,7 @@ var job = schedule.scheduleJob(rule, function(){
 		                throw err;
 		            }
 
-		            res.send(newShow);
+		           	console.log("Show: " + currShow.name + " has been updated. The new air date is: " + nextAirDate);
 
 		        });
 
@@ -45,7 +45,5 @@ var job = schedule.scheduleJob(rule, function(){
 		}
 
 	});
-
-
 
 });
