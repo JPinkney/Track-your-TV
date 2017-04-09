@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= title %></title>
-	   
-	<script src="/javascripts/jquery.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="/javascripts/jquery.js"</script>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -55,7 +55,7 @@
 	  				<div class="show-container">
 					  <img src=<%= shows[i].image %> alt="Avatar" class="image">
 					  <div class="middle">
-					    <div class="text">Remove Show</div>
+					    <input id=<%= shows[i].id %> class="text" value="Remove Show" type="submit">
 					  </div>
 					</div>
 				<% } %>
@@ -78,7 +78,16 @@
 		<% } %>
 
 		<script type="text/javascript">
-				
+
+			for(let x = 0; x < $('.show-container').length; x++){
+				$('#'+$('.show-container > .middle > .text')[x].id).on('click', function(){
+					alert($('#'+$('.show-container > .middle > .text')[x].id)[0].id);
+					$.post('/api/shows/removeFromUserViaID', {"showid": $('#'+$('.show-container > .middle > .text')[x].id)[0].id}, function(resp){
+						$(this).remove();
+					});
+				});
+			}
+
 			$('#search-button').on('click', function(){
 				//Do the request to the backend
 				var showToAdd = $('#search-input').val();
@@ -90,10 +99,14 @@
 					}else{
 						$('#middle-container').append('<div class="show-container">');
 						$('#middle-container').append('<img src=' + result.shows.slice(-1)[0] + ' alt="Avatar" class="image">');
-						$('#middle-container').append('<div class="middle"><div class="text">Remove Show</div></div>');
-						$('#search-input').val('')
+						$('#middle-container').append('<div class="middle"><div id=' + result.id + ' class="text">Remove Show</div></div>');
+						$('#search-input').val('');
+						$('#'+result.id).on('click', function(){
+							$.post('/api/shows/removeFromUserViaID', {"showid": result.id}, function(resp){
+								$(this).remove();
+							});
+						});
 					}
-	
 
 				});
 			});

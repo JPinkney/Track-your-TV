@@ -52,6 +52,7 @@ app.use('/profile', profile);
 app.route('/api/users').post(users.registerUser).put(users.updateUser).delete(users.deleteUser);
 app.route('/api/users/validateUser').post(users.validateUser);
 app.route('/api/shows/addShowToUser').post(shows.addShowToUser);
+app.route('/api/shows/removeFromUserViaID').post(shows.removeFromUserViaID);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

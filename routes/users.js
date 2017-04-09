@@ -106,7 +106,6 @@ exports.registerUser = function(req, res){
             
         let username = req.body.username;
         let password = bcrypt.hashSync(req.body.password);
-        let confirm = bcrypt.hashSync(req.body.confirm);
         let email = req.body.email;
         let phonenumber = req.body.phonenumber;
         let carrier = req.body.carrier;
@@ -119,9 +118,9 @@ exports.registerUser = function(req, res){
             
             }else{
 
-                if(password === confirm){
+                if(req.body.password === req.body.confirm){
 
-                    var newUser = new User({"username": username, "password": password, "email": email, "phonenumber": phonenumber, "carrier": carrier});
+                    var newUser = new User({"username": username, "password": password, "email": email, "phonenumber": phonenumber, "carrier": carrier, "shows": []});
 
                     newUser.save(function(err, newUser){
                         if(err){
@@ -129,6 +128,7 @@ exports.registerUser = function(req, res){
                         }
 
                         req.session.user = newUser;
+                        req.session.user.shows = ["test"];
                         res.redirect('/members');
                     });
 

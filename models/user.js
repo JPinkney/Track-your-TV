@@ -30,9 +30,7 @@ var userSchema = new Schema(
         carrier:{
             type: String
         },
-        shows: {
-            type: [String]
-        }
+        shows: [{type: String, trim: true}]
     }
 );
 

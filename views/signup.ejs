@@ -37,7 +37,7 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form id="signup-form" class="form-horizontal">
+					<form id="signup-form" class="form-horizontal" method="post" action="/api/users" >
 
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Username</label>
@@ -113,16 +113,7 @@
 						<div class="login-register">
 				            <a href="/login">Login</a>
 				        </div>
-
-
-				        <script type="text/javascript">
-				        	$.post('/api/users', $('#signup-form').serialize(), function(resp){
-				        		if(resp){
-				        			alert(resp);
-				        		}
-				        	});
-				        </script>
-
+				        
 					</form>
 				</div>
 			</div>
