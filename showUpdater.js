@@ -17,7 +17,7 @@ var job = schedule.scheduleJob(rule, function(){
 		}
 
 		for(let show in shows){
-			var currShow = shows[show];
+			let currShow = shows[show];
 
 			tvmaze.singleShow(currShow.name, "episodes", function(error, response) {
 

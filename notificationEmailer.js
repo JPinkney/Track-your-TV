@@ -13,22 +13,21 @@ let mailOptions = {
 	subject: 'Your show(s) is/are on tonight'
 };
 
-
-
 var rule = new schedule.RecurrenceRule();
 rule.minute = 60;
 
 var job = schedule.scheduleJob(rule, function(){
-	console.log("Collecting people that need to be notified");
+	console.log("Collecting people that need to be notified via email");
 
 	var currentDateTime = (new Date(Date.now())).toString();
-	Show.find({"nextAirDate": {"$eq": currentDateTime}}, function(err, shows){ //Will need to fix to get dates in the how
+	var previous_hour = new Date((new Date).getTime() - 3600000);
+	Show.find({"nextAirDate": {"$gte": previous_hour, "$lte": currentDateTime, "$ne": "break"}}, function(err, shows){
 		
 		if(err){
 			throw err;
 		}
 
-		User.find({"shows": {"$in": shows}}, function(error, response){
+		User.find({"shows": {"$in": shows}, "emailnotifications": 1}, function(error, response){
 			for(let user in response){
 				let currUser = response[user];
 				mailOptions.text = getShowsInUser(shows, currUser.shows);

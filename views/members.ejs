@@ -95,6 +95,7 @@
 
 					if(result.message){
 						alert(result.message);
+						$('#search-input').val('');
 					}else{
 						$('#middle-container').append('<div class="show-container"><img src=' + result.imagesrc + ' alt="Avatar" class="image"><div class="middle"><div id=' + result.id + ' class="text">Remove Show</div></div>');
 						$('#search-input').val('');
