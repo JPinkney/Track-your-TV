@@ -93,8 +93,6 @@
 
 				$.post('/api/shows/addShowToUser', {'showname': showToAdd}, function(result){
 
-					alert(result.id);
-
 					if(result.message){
 						alert(result.message);
 					}else{
