@@ -44,12 +44,8 @@ exports.removeFromUserViaID = function(req, res){
  */
 exports.addShowToUser = function(req, res){
 
-    console.log("??");
-
     let username = req.session.user.username;
     let showname = req.body.showname;
-
-    console.log("hello");
 
     Show.find({"name": showname}, function(err, show){
         
@@ -57,24 +53,26 @@ exports.addShowToUser = function(req, res){
             throw err;
         }   
 
-        console.log(show[0]);
-        console.log(show[0].id);
-
         //Check if they are already tracking
-        User.find({"shows": show[0].id}, function(err, result){
-                
+        User.findOne({"username": username}, function(err, result){
+
             //Its already in the DB so we just need to add the object ID to the user
             if(show.length !== 0){
 
-                req.session.user.shows.push(show[0].id);
+                //If the show is found in the current show list then don't add otherwise add
+                if(result.shows.indexOf(show[0].id) !== -1){
+                    res.send({"message": "You are already tracking that show"});
+                }else{
+                    req.session.user.shows.push(show[0].id);
 
-                User(req.session.user).update(req.session.user, function(err){
-                    if(err){
-                        throw err;
-                    }
+                    User(req.session.user).update(req.session.user, function(err){
+                        if(err){
+                            throw err;
+                        }
 
-                    res.send({"shows": req.session.user.shows});
-                });
+                        res.send({"id": show[0].id, "imagesrc": show[0].image});
+                    });
+                }
            
             //Its not in the DB so we need to search tvmaze and add to shows and user
             }else{
@@ -112,7 +110,7 @@ exports.addShowToUser = function(req, res){
                                 throw err;
                             }
 
-                            res.send({"shows": req.session.user.shows});
+                            res.send({"id": newShow.id, "imagesrc": show[0].image});
                         
                         });
 

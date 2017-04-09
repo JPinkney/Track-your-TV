@@ -128,7 +128,7 @@ exports.registerUser = function(req, res){
                         }
 
                         req.session.user = newUser;
-                        req.session.user.shows = ["test"];
+                        req.session.user.shows = [];
                         res.redirect('/members');
                     });
 

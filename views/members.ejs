@@ -81,9 +81,8 @@
 
 			for(let x = 0; x < $('.show-container').length; x++){
 				$('#'+$('.show-container > .middle > .text')[x].id).on('click', function(){
-					alert($('#'+$('.show-container > .middle > .text')[x].id)[0].id);
 					$.post('/api/shows/removeFromUserViaID', {"showid": $('#'+$('.show-container > .middle > .text')[x].id)[0].id}, function(resp){
-						$(this).remove();
+						$('#'+$('.show-container > .middle > .text')[x].id).parent().parent().remove();
 					});
 				});
 			}
@@ -94,16 +93,17 @@
 
 				$.post('/api/shows/addShowToUser', {'showname': showToAdd}, function(result){
 
+					alert(result.id);
+
 					if(result.message){
 						alert(result.message);
 					}else{
-						$('#middle-container').append('<div class="show-container">');
-						$('#middle-container').append('<img src=' + result.shows.slice(-1)[0] + ' alt="Avatar" class="image">');
-						$('#middle-container').append('<div class="middle"><div id=' + result.id + ' class="text">Remove Show</div></div>');
+						$('#middle-container').append('<div class="show-container"><img src=' + result.imagesrc + ' alt="Avatar" class="image"><div class="middle"><div id=' + result.id + ' class="text">Remove Show</div></div>');
 						$('#search-input').val('');
+
 						$('#'+result.id).on('click', function(){
 							$.post('/api/shows/removeFromUserViaID', {"showid": result.id}, function(resp){
-								$(this).remove();
+								$('#'+result.id).parent().parent().remove();
 							});
 						});
 					}
