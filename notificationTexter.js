@@ -6,14 +6,10 @@ var tvmaze = require("tvmaze-node");
 var mongoose = require('mongoose');
 var dial = require('dial')('gmail', 'username', 'pass');
 var Show = require('./models/show');
-var User = require('./models/user');
 
 let mailOptions = {
-	from: '"Track your TV" <track@gmail.com>',
-	subject: 'Your show(s) is/are on tonight'
+	from: '"Track your TV" <track@gmail.com>'
 };
-
-
 
 var rule = new schedule.RecurrenceRule();
 rule.minute = 60;
@@ -34,8 +30,8 @@ var job = schedule.scheduleJob(rule, function(){
 				mailOptions.text = getShowsInUser(shows, currUser.shows);
 				mailOptions.to = currUser.email;
 
-				dial.sendText(mailOptions, function(resp){
-					console.log("Email has been sent to %s", currUser.email);
+				dial.text(currUser.carrier, mailOptions, function(resp){
+					console.log("Text has been sent to %s", currUser.email);
 				});
 
 			}

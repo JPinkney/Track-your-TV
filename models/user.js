@@ -27,6 +27,9 @@ var userSchema = new Schema(
         textnotifications:{
             type: Boolean
         },
+        carrier:{
+            type: String
+        },
         shows: {
             type: [String]
         }

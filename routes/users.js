@@ -106,8 +106,10 @@ exports.registerUser = function(req, res){
             
         let username = req.body.username;
         let password = bcrypt.hashSync(req.body.password);
+        let confirm = bcrypt.hashSync(req.body.confirm);
         let email = req.body.email;
         let phonenumber = req.body.phonenumber;
+        let carrier = req.body.carrier;
 
         User.find({ "username" : username }, function(err, userReturn){
 
@@ -117,16 +119,24 @@ exports.registerUser = function(req, res){
             
             }else{
 
-                var newUser = new User({"username": username, "password": password, "email": email, "phonenumber": phonenumber});
+                if(password === confirm){
 
-                newUser.save(function(err, newUser){
-                    if(err){
-                        throw err;
-                    }
+                    var newUser = new User({"username": username, "password": password, "email": email, "phonenumber": phonenumber, "carrier": carrier});
 
-                    req.session.user = newUser;
-                    res.redirect('/members');
-                });
+                    newUser.save(function(err, newUser){
+                        if(err){
+                            throw err;
+                        }
+
+                        req.session.user = newUser;
+                        res.redirect('/members');
+                    });
+
+                }else{
+
+                    res.send("Passwords do not match");
+                
+                }
 
             }
 
